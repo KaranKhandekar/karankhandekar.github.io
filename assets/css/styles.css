@@ -1,0 +1,144 @@
+.sideNav {
+  margin-left:20px;
+}
+
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.5;
+  color:#212529;
+  text-align:left;
+  background-color:#fff;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+}
+
+.link-space {
+  margin-right:20px;
+}
+
+.dropdown-menu.show.portfolio {
+  background-color:#ffffff;
+  border-color:rgba(255,255,255,0);
+  border-radius:10px;
+}
+
+.hr-line {
+  margin-top:86px;
+}
+
+.center-text {
+  text-align:center;
+  margin-top:20px;
+  color:#fff;
+  font-size:20px;
+}
+
+p {
+  color:#fff;
+}
+
+.btn.btn-primary.touch {
+  background-color:rgba(255,255,255,0);
+  border-color:#fff;
+  border:solid;
+  width:300px;
+}
+
+.btn.btn-primary.touch:hover {
+  background-color:rgb(203,10,10);
+  border-color:#cb0a0a;
+  border:solid rgb(203,10,10);
+}
+
+.pull-down {
+  margin-top:40px;
+}
+
+.btn.btn-primary.iris-btn {
+  width:250px;
+  background-color:rgba(255,255,255,0);
+  border-color:#fff;
+  color:#fff;
+}
+
+.btn.btn-primary.iris-btn:hover {
+  width:250px;
+  background-color:rgb(203,10,10);
+  border-color:#ffffff;
+  border:solid rgb(203,10,10);
+  color:#fff;
+}
+
+.modal-body {
+  position:relative;
+  -webkit-box-flex:1;
+  -ms-flex:1 1 auto;
+  flex:1 1 auto;
+  padding:1rem;
+  background-color:#323232;
+  background-image:url(../../assets/img/profileBg.jpg);
+}
+
+.text-center.bot-mar {
+  margin-bottom:10px;
+}
+
+.col.auto-mar {
+  margin:auto;
+}
+
+.modal-footer {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-box-pack:end;
+  -ms-flex-pack:end;
+  justify-content:flex-end;
+  padding:1rem;
+  border-top:1px solid #e9ecef;
+  background-color:#100f0f;
+}
+
+.modal-header {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:start;
+  -ms-flex-align:start;
+  align-items:flex-start;
+  -webkit-box-pack:justify;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  padding:1rem;
+  border-bottom:1px solid #e9ecef;
+  background-color:#100f0f;
+}
+
+.portfolio-items {
+  margin-bottom:20px;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color:#eff1f4;
+  text-decoration:none;
+  background-color:#000000;
+  height:100%;
+  border-radius:30px;
+}
+
+.photo-gallery {
+  margin-top:80px;
+}
+
+.copyright a {
+  color:#9abbfb;
+  text-decoration:none;
+}
+
