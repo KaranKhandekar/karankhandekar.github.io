@@ -23,7 +23,11 @@
   text-align:center;
 }
 
-.btn.btn-secondary {
+.btn.btn-dark {
+  width:200px;
+}
+
+.btn.btn-info {
   width:200px;
 }
 
