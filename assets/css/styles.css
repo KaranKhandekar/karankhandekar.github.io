@@ -1,59 +1,18 @@
-.cover-text {
-  font-size: 60px;
-  color: rgb(227,232,237);
-  letter-spacing: 10px;
+.oneLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.cover-para {
-  font-size: 25px;
-  color: #fff;
+.myIcons {
+  font-size: 18px;
+  color: rgba(11,128,237,0.5);
+  padding: 7px;
 }
 
-.container-fluid.about-me {
-  padding: 80px;
-  background-color: #38dcc8;
-  color: #fff;
-}
-
-.container.git-hub {
-  padding: 80px;
-}
-
-.git-btn-div {
-  text-align: center;
-}
-
-.btn.btn-dark {
-  width: 200px;
-}
-
-.btn.btn-info {
-  width: 200px;
-}
-
-.grad {
-  background-image: linear-gradient(to right, #fce38a, #f38181);
-  /*border-radius: 20px;*/
-}
-
-.grad1 {
-  background-image: linear-gradient(to right, #f54ea2, #ff7676);
-  /*border-radius: 20px;*/
-}
-
-.grad2 {
-  background-image: linear-gradient(to right, #42e695, #3bb2bb);
-  /*border-radius: 20px;*/
-}
-
-.grad3 {
-  background-image: linear-gradient(to right, #42e695, #3bb2bb);
-  border-radius: 20px;
-}
-
-@media (max-width: 576px) {
-  .txtSize {
-    font-size: 38px;
-  }
+.myIcons:hover {
+  font-size: 18px;
+  color: #079cef;
+  padding: 7px;
 }
 
