@@ -24,6 +24,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="assets/css/Number-Input-Without-Arrow.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v6.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="122196892504848"
+  theme_color="#7646ff"
+  logged_in_greeting="Whats up. Thanks for visiting my website. Connect to messanger and start talking"
+  logged_out_greeting="Whats up. Thanks for visiting my website. Connect to messanger and start talking">
+      </div>
 </head>
 
 <body style="font-family: Aldrich, sans-serif;">
