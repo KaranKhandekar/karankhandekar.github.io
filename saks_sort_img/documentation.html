@@ -82,7 +82,8 @@ tkinter._test()</code></pre>
         </ol>
 
         <h2>Program Code</h2>
-        <pre><code>import os
+        <pre><code>
+import os
 import shutil
 import time
 import webbrowser
@@ -146,7 +147,7 @@ def sort_images(source_folder, status_label, count_label, time_label):
 
 def run_app():
     root = Tk()
-    root.title("SortImg")
+    root.title("SortImg for Saks")
 
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
@@ -177,10 +178,10 @@ def run_app():
             messagebox.showwarning("No Folder Selected", "Please select a source folder.")
 
     def on_how_to_use():
-        webbrowser.open("https://www.saks.com")
+        webbrowser.open("https://karankhandekar.github.io/saks_sort_img/how_to_use.html")
 
     def on_help():
-        webbrowser.open("https://www.saks.com/help")
+        webbrowser.open("https://karankhandekar.github.io/saks_sort_img/documentation.html")
 
     run_button = Button(button_frame, text="Run", command=on_run, font=('Helvetica', 12), fg='black', bg='#edeceb')
     run_button.pack(pady=10)
@@ -207,6 +208,7 @@ def run_app():
 
 if __name__ == '__main__':
     run_app()
+
         </code></pre>
 
         <h2>Contact Information</h2>
