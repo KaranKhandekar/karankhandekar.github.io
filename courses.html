@@ -17,15 +17,15 @@
     <link rel="icon" type="image/jpeg" sizes="192x192" href="assets/img/192.jpg">
     <link rel="icon" type="image/jpeg" sizes="512x512" href="assets/img/512.jpg">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
     <link rel="stylesheet" href="assets/css/custNav.css">
     <link rel="stylesheet" href="assets/css/Drag-And-Drop-Image.css">
     <link rel="stylesheet" href="assets/css/Hero-Carousel.css">
     <link rel="stylesheet" href="assets/css/Hero-Features.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="assets/css/Number-Input-Without-Arrow.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 <!-- Load Facebook SDK for JavaScript -->
@@ -57,15 +57,16 @@
 </head>
 
 <body style="font-family: Aldrich, sans-serif;">
-    <nav class="navbar navbar-light navbar-expand-md bg-white shadow">
+    <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white shadow">
         <div class="container"><a class="navbar-brand" href="index.html">Karan Khandekar</a><button data-toggle="collapse" class="navbar-toggler border rounded border-dark" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><i class="fa fa-sort-amount-desc" style="color: #000000;"></i></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html" style="filter: blur(1px);">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="download.html" style="filter: blur(0px);">Download</a></li>
                     <li class="nav-item"></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="contact-me.html" style="filter: blur(1px);">Contact</a></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-me.html" style="filter: blur(0px);">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -100,7 +101,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Unlock Discount</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Unlock Discount</h4><button class="close" type="button" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
                     <p>20% off on Keet Classroom - Use the below coupon</p>
@@ -111,8 +112,8 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/custNav.js"></script>
     <script src="assets/js/Drag-And-Drop-Image.js"></script>
     <script src="assets/js/dropdown-animation.js"></script>
