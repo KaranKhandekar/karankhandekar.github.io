@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SortImg Program Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background: #e4e4e4;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #e4e4e4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SortImg Program Guide</h1>
+
+        <h2>How to Use SortImg</h2>
+        <div class="step">
+            <h3>Step 1: Select Folder Location</h3>
+            <p>Click the "Select Folder Location" button to choose the location where the <code>white_background</code> and <code>non_white_background</code> folders will be created.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Run the Sorting Process</h3>
+            <p>Click the "Run" button to select the source folder containing the images you want to sort. This will start the sorting process.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Wait for Completion</h3>
+            <p>Wait for the program to process and move the images. The status will be updated in the UI, and a message box will notify you once the process is complete.</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Check Sorted Images</h3>
+            <p>Once the process is complete, check the <code>white_background</code> and <code>non_white_background</code> folders in the selected location for your sorted images.</p>
+        </div>
+
+        <h2>How SortImg Works</h2>
+        <p>The SortImg program sorts images based on their background color. Here's a breakdown of how it works:</p>
+
+        <h3>Folder Creation</h3>
+        <p>When you click "Select Folder Location", the program creates two folders in the chosen location:</p>
+        <ul>
+            <li><strong>white_background:</strong> For images with a white background</li>
+            <li><strong>non_white_background:</strong> For images without a white background</li>
+        </ul>
+
+        <h3>Image Processing</h3>
+        <p>The program processes each image in the selected source folder by checking the color of the top-right 5x5 pixel area. If all pixels in this area are white, the image is classified as having a white background; otherwise, it is classified as having a non-white background.</p>
+
+        <h3>Moving Images</h3>
+        <p>Based on the background color, images are moved to the respective folders:</p>
+        <ul>
+            <li>If the background is white, the image is moved to the <code>white_background</code> folder.</li>
+            <li>If the background is not white, the image is moved to the <code>non_white_background</code> folder.</li>
+        </ul>
+
+        <h3>Completion Notification</h3>
+        <p>Once all images are processed, a message box notifies you that the sorting is complete. The program also updates the status, count, and time taken for the process in the UI.</p>
+
+        <h2>Contact Information</h2>
+        <p>If you have any questions or need further assistance, please contact:</p>
+        <ul>
+            <li>Karan Khandekar - <a href="mailto:Karan.khandekar@saks.com">karan.khandekar@saks.com</a></li>
+            <li>Manohar Murugan - <a href="mailto:manohar.murugan@saks.com">manohar.murugan@saks.com</a></li>
+        </ul>
+    </div>
+</body>
+</html>
