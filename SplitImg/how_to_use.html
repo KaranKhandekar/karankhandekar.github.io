@@ -3,96 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SortImg Program Guide</title>
+    <title>User Guide - SplitImg for Designers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             background-color: #f4f4f4;
+            color: #333;
             margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        main {
             padding: 20px;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        h1 {
+            color: #FFF;
         }
-        h1, h2, h3 {
+        h2 {
             color: #333;
         }
-        code {
-            background: #e4e4e4;
-            padding: 2px 5px;
-            border-radius: 4px;
+        p {
+            font-size: 16px;
+            line-height: 1.6;
         }
-        pre {
-            background: #e4e4e4;
+        .footer {
+            text-align: center;
+            font-size: 14px;
             padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
+            background-color: #333;
+            color: white;
         }
-        .step {
-            margin-bottom: 20px;
+        ul {
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>SortImg Program Guide</h1>
+    <header>
+        <h1>SplitImg for Designers</h1>
+        <p>User Guide</p>
+    </header>
 
-        <h2>How to Use SortImg</h2>
-        <div class="step">
-            <h3>Step 1: Select Folder Location</h3>
-            <p>Click the "Select Folder Location" button to choose the location where the <code>white_background</code> and <code>non_white_background</code> folders will be created.</p>
-        </div>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>
+                Welcome to the user guide for SplitImg for Designers. This application helps automate the process of sorting, tagging, and distributing images based on their background colors. It is designed to assist designers in quickly organizing and processing images.
+            </p>
+        </section>
 
-        <div class="step">
-            <h3>Step 2: Run the Sorting Process</h3>
-            <p>Click the "Run" button to select the source folder containing the images you want to sort. This will start the sorting process.</p>
-        </div>
+        <section>
+            <h2>How the Software Works</h2>
+            <p>The SplitImg software works by analyzing images and performing the following tasks:</p>
+            <ul>
+                <li><strong>Image Selection:</strong> You choose a folder containing images to be processed.</li>
+                <li><strong>Background Analysis:</strong> The software checks the background of each image by analyzing the top-right corner and determining if the background is white or gray.</li>
+                <li><strong>Tagging:</strong> If the background is gray, the image receives a green tag. If the background is white, the image gets a yellow tag.</li>
+                <li><strong>Distribution:</strong> The software then distributes the images among the specified number of designers using a round-robin method.</li>
+            </ul>
+        </section>
 
-        <div class="step">
-            <h3>Step 3: Wait for Completion</h3>
-            <p>Wait for the program to process and move the images. The status will be updated in the UI, and a message box will notify you once the process is complete.</p>
-        </div>
+        <section>
+            <h2>Steps to Use the Software</h2>
+            <ol>
+                <li><strong>Step 1:</strong> Open the SplitImg application.</li>
+                <li><strong>Step 2:</strong> Select the number of designers (up to 15) from the dropdown list.</li>
+                <li><strong>Step 3:</strong> Click the "Run" button to start the process.</li>
+                <li><strong>Step 4:</strong> A dialog box will open. Select the folder that contains the images you want to process.</li>
+                <li><strong>Step 5:</strong> Wait while the software processes the images. You will see the number of images processed and the time taken for the operation displayed in real-time.</li>
+                <li><strong>Step 6:</strong> Once the process is complete, the images will be sorted into folders, and the green or yellow tags will be applied as per their background color.</li>
+            </ol>
+        </section>
 
-        <div class="step">
-            <h3>Step 4: Check Sorted Images</h3>
-            <p>Once the process is complete, check the <code>white_background</code> and <code>non_white_background</code> folders in the selected location for your sorted images.</p>
-        </div>
+        <section>
+            <h2>Technical Background</h2>
+            <p>
+                The software calculates the background color of each image by examining the top-right corner. It uses basic RGB values to determine the dominant color:
+            </p>
+            <ul>
+                <li><strong>White Background:</strong> Identified when the pixel color is RGB (255, 255, 255).</li>
+                <li><strong>Gray Background:</strong> Identified when the pixel color is close to RGB (128, 128, 128).</li>
+            </ul>
+            <p>The software then assigns the appropriate tag and distributes the image based on the settings provided.</p>
+        </section>
 
-        <h2>How SortImg Works</h2>
-        <p>The SortImg program sorts images based on their background color. Here's a breakdown of how it works:</p>
+        <section>
+            <h2>Contact</h2>
+            <p>
+                For further questions or support, please contact the developer at: <a href="mailto:khandekarkaran@gmail.com">khandekarkaran@gmail.com</a>
+            </p>
+        </section>
+    </main>
 
-        <h3>Folder Creation</h3>
-        <p>When you click "Select Folder Location", the program creates two folders in the chosen location:</p>
-        <ul>
-            <li><strong>white_background:</strong> For images with a white background</li>
-            <li><strong>non_white_background:</strong> For images without a white background</li>
-        </ul>
-
-        <h3>Image Processing</h3>
-        <p>The program processes each image in the selected source folder by checking the color of the top-right 5x5 pixel area. If all pixels in this area are white, the image is classified as having a white background; otherwise, it is classified as having a non-white background.</p>
-
-        <h3>Moving Images</h3>
-        <p>Based on the background color, images are moved to the respective folders:</p>
-        <ul>
-            <li>If the background is white, the image is moved to the <code>white_background</code> folder.</li>
-            <li>If the background is not white, the image is moved to the <code>non_white_background</code> folder.</li>
-        </ul>
-
-        <h3>Completion Notification</h3>
-        <p>Once all images are processed, a message box notifies you that the sorting is complete. The program also updates the status, count, and time taken for the process in the UI.</p>
-
-        <h2>Contact Information</h2>
-        <p>If you have any questions or need further assistance, please contact:</p>
-        <ul>
-            <li>Karan Khandekar - <a href="mailto:Karan.khandekar@saks.com">karan.khandekar@saks.com</a></li>
-            <li>Manohar Murugan - <a href="mailto:manohar.murugan@saks.com">manohar.murugan@saks.com</a></li>
-        </ul>
+    <div class="footer">
+        <p>Developed by Karan Khandekar for Saks Global</p>
     </div>
 </body>
 </html>
