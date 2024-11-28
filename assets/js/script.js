@@ -115,7 +115,21 @@
 					$('#contact-form')[0].reset();
 				},
 				error: function(xhr, status, error) {
-					$('.ajax-response').html('<div class="alert alert-danger">Error: ' + error + '</div>');
+					// More detailed error logging
+					console.log('Status:', status);
+					console.log('Error:', error);
+					console.log('Response:', xhr.responseText);
+					console.log('Status Code:', xhr.status);
+					
+					let errorMessage = 'Error: ' + error;
+					if (xhr.responseText) {
+						errorMessage += '<br>Details: ' + xhr.responseText;
+					}
+					if (xhr.status) {
+						errorMessage += '<br>Status Code: ' + xhr.status;
+					}
+					
+					$('.ajax-response').html('<div class="alert alert-danger">' + errorMessage + '</div>');
 				}
 			});
 		});
