@@ -98,4 +98,27 @@
 		},]
 	});
 
+	// Add this to your existing script.js
+	$(document).ready(function() {
+		$('#contact-form').on('submit', function(e) {
+			e.preventDefault();
+			
+			// Update hidden input with select value
+			$('#hiddenChooseYourFocus').val($('select[name="ChooseYourFocus"]').val());
+			
+			$.ajax({
+				type: 'POST',
+				url: 'assets/mail.php',
+				data: $(this).serialize(),
+				success: function(response) {
+					$('.ajax-response').html('<div class="alert alert-success">' + response + '</div>');
+					$('#contact-form')[0].reset();
+				},
+				error: function(xhr, status, error) {
+					$('.ajax-response').html('<div class="alert alert-danger">Error: ' + error + '</div>');
+				}
+			});
+		});
+	});
+
 })(jQuery);
