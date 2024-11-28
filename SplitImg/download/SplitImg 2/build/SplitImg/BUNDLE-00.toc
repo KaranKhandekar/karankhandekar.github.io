@@ -1,3 +1,0 @@
-([('SplitImg',
-   '/Users/h896619/Downloads/SplitImg/dist/SplitImg',
-   'EXECUTABLE')],)
