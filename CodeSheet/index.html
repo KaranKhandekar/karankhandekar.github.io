@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG One Excel Reader</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SheetJS library for Excel file reading with fallback -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" 
+            onerror="loadBackupSheetJS()"></script>
+    <script>
+        // Fallback function to load SheetJS from alternative CDN
+        function loadBackupSheetJS() {
+            console.log('Primary SheetJS failed, loading backup...');
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';
+            script.onerror = function() {
+                console.error('All SheetJS sources failed to load');
+                alert('Failed to load Excel processing library. Please check your internet connection and refresh the page.');
+            };
+            document.head.appendChild(script);
+        }
+        
+        // Debug function to check if everything is working
+        function checkSystemStatus() {
+            console.log('=== SG One Excel Reader System Check ===');
+            console.log('SheetJS loaded:', typeof XLSX !== 'undefined');
+            console.log('File API supported:', window.File && window.FileReader);
+            console.log('Modern JS supported:', typeof Promise !== 'undefined');
+            console.log('=====================================');
+        }
+        
+        // Run system check when page loads
+        window.addEventListener('load', function() {
+            setTimeout(checkSystemStatus, 1000);
+        });
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="icon.png" alt="SG One Logo" class="logo-icon" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-file-excel" style="display: none;"></i>
+                    </div>
+                    <div class="app-title">
+                        <h1>Excel Reader</h1>
+                        <p>Advanced Excel processing with HTML validation</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <!-- Buttons removed as requested -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <div class="upload-container">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Upload Excel Files</h3>
+                        <p>Click to upload or drag and drop your Excel files here</p>
+                        <div class="upload-details">
+                            <span class="file-types">Supports .xlsx, .xls</span>
+                            <span class="file-size">Max 50 MB per file</span>
+                        </div>
+                        <input type="file" id="fileInput" accept=".xlsx,.xls" multiple hidden>
+                    </div>
+                    
+                    <!-- Uploaded Files List -->
+                    <div class="uploaded-files" id="uploadedFiles" style="display: none;">
+                        <h4>Uploaded Files</h4>
+                        <div class="files-list" id="filesList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Processing Section -->
+            <section class="data-section" id="dataSection" style="display: none;">
+                <div class="data-header">
+                    <div class="data-info">
+                        <h3>Excel Data Processing</h3>
+                        <div class="file-info-display" id="currentFileInfo"></div>
+                    </div>
+                    <div class="data-controls">
+                        <div class="worksheet-selector">
+                            <label for="worksheetSelect">Worksheet:</label>
+                            <select id="worksheetSelect">
+                                <option value="">Choose a worksheet...</option>
+                            </select>
+                        </div>
+                        <div class="view-controls">
+                            <button id="toggleHtmlMode" class="btn-toggle">
+                                <i class="fas fa-code"></i>
+                                <span id="htmlModeText">Show HTML Rendered</span>
+                            </button>
+                            <button id="exportData" class="btn-export">
+                                <i class="fas fa-file-export"></i>
+                                Export Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Table -->
+                <div class="table-wrapper">
+                    <div class="table-container">
+                        <table id="dataTable">
+                            <thead id="tableHead"></thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- HTML Validation Panel -->
+                <div class="validation-panel" id="validationPanel" style="display: none;">
+                    <div class="panel-header">
+                        <h4><i class="fas fa-code"></i> HTML Content Validation</h4>
+                        <span class="html-count" id="htmlCount">0 cells with HTML</span>
+                    </div>
+                    <div class="validation-content">
+                        <div id="htmlCellsList"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h3>Processing Excel File</h3>
+                <p id="loadingText">Please wait while we process your file...</p>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div class="toast-container" id="toastContainer"></div>
+
+        <!-- Error Modal -->
+        <div class="modal" id="errorModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Error</h3>
+                    <button class="modal-close" id="closeErrorModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="errorText"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-primary" id="closeError">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
