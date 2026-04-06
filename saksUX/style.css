@@ -424,38 +424,113 @@ ul {
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh;
-  /* Responsive depth */
   background: var(--color-surface);
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  /* Flex removed to allow absolute positioning of content */
 }
 
 .hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-image img {
+#hero-backup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 2;
+}
+
+#hero-backup-img.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#hero-video.ready {
+  opacity: 1;
+}
+
+/* Premium Video Controls */
+.hero-video-controls {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  z-index: 10;
+  display: flex;
+  gap: var(--spacing-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.hero-video-controls.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.video-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-primary);
+  /* Changed to primary for contrast if video is light, or stay white */
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.video-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #ffffff;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.video-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.5px;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  color: var(--color-primary);
-  /* Dark text assuming a light image */
-  max-width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: #ffffff;
+  /* Premium white text for video overlay */
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  /* Added text shadow for readability */
+  max-width: 800px;
+  width: 100%;
   padding: var(--spacing-xl);
+  text-align: center;
 }
 
 .hero-content h1 {

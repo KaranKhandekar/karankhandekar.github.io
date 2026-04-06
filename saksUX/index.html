@@ -159,16 +159,27 @@
   <main>
     <section class="hero">
       <div class="hero-image">
-        <img src="assets/saks_spring_hero.png" alt="Spring Collection 2024">
-      </div>
+        <img src="assets/16x9_Shoppable_Theme1.webp" alt="Spring Collection 2024" id="hero-backup-img">
+        <video id="hero-video" muted loop playsinline preload="auto">
+          <source src="assets/video/SHOPPABLE_01_16X9.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-controls" id="hero-video-controls">
+          <button class="video-btn" id="play-pause-btn" aria-label="Play/Pause">
+            <i data-lucide="pause"></i>
+          </button>
+          <button class="video-btn" id="mute-unmute-btn" aria-label="Mute/Unmute">
+            <i data-lucide="volume-x"></i>
+          </button>
+        </div>
+        <!-- </div>
       <div class="hero-content">
-        <h1>THE SPRING COLLECTIONS</h1>
-        <p>Sophisticated layers and modern silhouettes for the new season.</p>
+        <h1></h1>
+        <p></p>
         <div class="hero-cta">
           <a href="#" class="btn btn-primary">SHOP NOW</a>
           <a href="#" class="btn btn-secondary">EXPLORE EDITORIAL</a>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <!-- <section class="branding-module">
@@ -350,25 +361,68 @@
             </div>
           </div>
         </div>
-        <!-- <div class="branding-card">
-          <img src="assets/option3/Branding_Module_6.png" alt="Saks Exclusives Designer Edit">
+        <div class="branding-card">
+          <img src="assets/shoe_collection_promo.png" alt="Saks Exclusives Designer Edit">
           <div class="card-overlay">
             <div class="card-text">
-              <span class="card-label"></span>
-              <h2 class="card-title"></h2>
+              <span class="card-label">SAKS EXCLUSIVES</span>
+              <h2 class="card-title">DESIGNER EDIT</h2>
             </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
   </main>
 
   <script>
+    // Initialize Lucide Icons
     lucide.createIcons({
       attrs: {
         'stroke-width': 1.25
       }
     });
+
+    // Hero Video Transition Logic
+    const heroVideo = document.getElementById('hero-video');
+    const heroBackupImg = document.getElementById('hero-backup-img');
+    const heroVideoControls = document.getElementById('hero-video-controls');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+
+    // Muted by default as per request
+    if (heroVideo) {
+      heroVideo.muted = true;
+
+      heroVideo.addEventListener('canplaythrough', () => {
+        heroVideo.classList.add('ready');
+        heroBackupImg.classList.add('fade-out');
+        heroVideoControls.classList.add('visible');
+        heroVideo.play().catch(error => {
+          console.log("Autoplay was prevented:", error);
+        });
+      });
+
+      playPauseBtn.addEventListener('click', () => {
+        if (heroVideo.paused) {
+          heroVideo.play();
+          playPauseBtn.innerHTML = '<i data-lucide="pause"></i>';
+        } else {
+          heroVideo.pause();
+          playPauseBtn.innerHTML = '<i data-lucide="play"></i>';
+        }
+        lucide.createIcons();
+      });
+
+      muteUnmuteBtn.addEventListener('click', () => {
+        heroVideo.muted = !heroVideo.muted;
+        if (heroVideo.muted) {
+          muteUnmuteBtn.innerHTML = '<i data-lucide="volume-x"></i>';
+        } else {
+          muteUnmuteBtn.innerHTML = '<i data-lucide="volume-2"></i>';
+        }
+        lucide.createIcons();
+      });
+    }
 
     // Search Overlay Logic
     const searchIcon = document.getElementById('search-icon');
@@ -376,22 +430,23 @@
     const closeSearch = document.getElementById('close-search');
     const searchInput = document.getElementById('search-input');
 
-    searchIcon.addEventListener('click', () => {
-      searchOverlay.classList.add('active');
-      setTimeout(() => searchInput.focus(), 300);
-    });
+    if (searchIcon && searchOverlay) {
+      searchIcon.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        setTimeout(() => searchInput.focus(), 300);
+      });
 
-    closeSearch.addEventListener('click', () => {
-      searchOverlay.classList.remove('active');
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+      closeSearch.addEventListener('click', () => {
         searchOverlay.classList.remove('active');
-      }
-    });
+      });
 
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+          searchOverlay.classList.remove('active');
+        }
+      });
+    }
   </script>
 </body>
 
