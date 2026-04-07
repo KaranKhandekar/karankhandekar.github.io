@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saks Fifth Avenue | Luxury Designer Clothing, Handbags & Shoes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="close-search" id="close-search"><i data-lucide="x"></i></div>
+    <div class="search-container">
+      <input type="text" class="search-input" id="search-input" placeholder="Search Designer, Category, or Trend">
+      <div class="search-suggestions">
+        <div class="suggestion-group">
+          <h4>Trending Searches</h4>
+          <ul>
+            <li><a href="#">Bottega Veneta Sandals</a></li>
+            <li><a href="#">Prada Work Bags</a></li>
+            <li><a href="#">Linen Summer Dresses</a></li>
+            <li><a href="#">Saint Laurent Sunglasses</a></li>
+          </ul>
+        </div>
+        <div class="suggestion-group">
+          <h4>Suggested Categories</h4>
+          <ul>
+            <li><a href="#">New Season Arrivals</a></li>
+            <li><a href="#">Wedding Guest Shop</a></li>
+            <li><a href="#">Designer Sale</a></li>
+            <li><a href="#">Sustainability at Saks</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global PromoBar -->
+  <header class="utility-bar">
+    <div class="container">
+      <div class="utility-left"></div> <!-- Empty left to balance center -->
+      <div class="promo-scroller">
+        <div class="scroller-arrow"><i data-lucide="chevron-left"></i></div>
+        <div class="scroller-text">
+          Sign Up for Saks Text Alerts and Get 10% Off Your Next Purchase | <strong>Text HELLOSAKS to 75283</strong>
+        </div>
+        <div class="scroller-arrow"><i data-lucide="chevron-right"></i></div>
+      </div>
+      <div class="utility-links">
+        <a href="#">Your Orders</a>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-grid">
+      <div class="header-left">
+        <a href="#" class="header-toggle active">WOMEN</a>
+        <a href="#" class="header-toggle">MEN</a>
+      </div>
+
+      <a href="/" class="logo">
+        <img src="assets/Saks_Fifth_Avenue_Logo_2.png" alt="Saks Fifth Avenue">
+      </a>
+
+      <div class="header-right">
+        <div class="search-bar-inline">
+          <i data-lucide="search"></i>
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="header-actions">
+          <div class="action-icon wishlist-icon">
+            <i data-lucide="heart"></i>
+          </div>
+          <div class="action-icon cart-icon">
+            <i data-lucide="shopping-bag"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="#" class="nav-link red-link">FRIENDS &amp; FAMILY</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">DESIGNERS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">NEW</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">CLOTHING</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">DRESSES</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">SHOES</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="menu-column">
+                <h3>Shop By Category</h3>
+                <ul>
+                  <li><a href="#">Heels</a></li>
+                  <li><a href="#">Boots</a></li>
+                  <li><a href="#">Sneakers</a></li>
+                  <li><a href="#">Sandals</a></li>
+                  <li><a href="#">Flats</a></li>
+                  <li><a href="#">Loafers &amp; Mules</a></li>
+                  <li><a href="#">Slippers</a></li>
+                  <li><a href="#">Platform Shoes</a></li>
+                </ul>
+              </div>
+              <div class="menu-column">
+                <h3>Luxury Designers</h3>
+                <ul>
+                  <li><a href="#">Saint Laurent</a></li>
+                  <li><a href="#">Gucci</a></li>
+                  <li><a href="#">Prada</a></li>
+                  <li><a href="#">Valentino Garavani</a></li>
+                  <li><a href="#">Christian Louboutin</a></li>
+                  <li><a href="#">Manolo Blahnik</a></li>
+                  <li><a href="#">Jimmy Choo</a></li>
+                  <li><a href="#">Balenciaga</a></li>
+                </ul>
+              </div>
+              <div class="menu-column">
+                <h3>The Shoe Edit</h3>
+                <ul>
+                  <li><a href="#">New Arrivals</a></li>
+                  <li><a href="#">Best Sellers</a></li>
+                  <li><a href="#">The Wedding Shop</a></li>
+                  <li><a href="#">Evening Shoes</a></li>
+                  <li><a href="#">Statement Sneakers</a></li>
+                  <li><a href="#">Travel Ready</a></li>
+                </ul>
+              </div>
+              <div class="menu-promo">
+                <div class="promo-image">
+                  <img src="assets/shoe_collection_promo.png" alt="The Boot Edit">
+                </div>
+                <div class="promo-text">The Boot Edit</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">BAGS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">JEWELRY</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">ACCESSORIES</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">BEAUTY</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">KIDS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">SALE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-image">
+        <img src="assets/16x9_Shoppable_Theme1.webp" alt="Spring Collection 2024" id="hero-backup-img">
+        <video id="hero-video" muted loop playsinline preload="auto">
+          <source src="assets/video/SHOPPABLE_01_16X9.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-controls" id="hero-video-controls">
+          <button class="video-btn" id="play-pause-btn" aria-label="Play/Pause">
+            <i data-lucide="pause"></i>
+          </button>
+          <button class="video-btn" id="mute-unmute-btn" aria-label="Mute/Unmute">
+            <i data-lucide="volume-x"></i>
+          </button>
+        </div>
+        <!-- </div>
+      <div class="hero-content">
+        <h1></h1>
+        <p></p>
+        <div class="hero-cta">
+          <a href="#" class="btn btn-primary">SHOP NOW</a>
+          <a href="#" class="btn btn-secondary">EXPLORE EDITORIAL</a>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- <section class="branding-module">
+      <p>Option 1</p>
+      <div class="branding-track">
+        <div class="branding-card">
+          <img src="assets/option1/BM_1.png" alt="The Latest Party Statements">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_2.png" alt="RSVP-Ready Evening Edit">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_3.png" alt="Designer Spotlight Versace">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_4.png" alt="For The Guys Luxes Tuxes">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/saks_spring_hero.png" alt="What To Pack Vacation Shop">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label">WHAT TO PACK</span>
+              <h2 class="card-title">VACATION SHOP</h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/shoe_collection_promo.png" alt="Saks Exclusives Designer Edit">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label">SAKS EXCLUSIVES</span>
+              <h2 class="card-title">DESIGNER EDIT</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+
+
+
+
+    <section class="branding-module">
+      <p>Option 2</p>
+      <div class="branding-track">
+        <div class="branding-card">
+          <img src="assets/option2/Branding_Module_1.jpg" alt="The Latest Party Statements">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option2/Branding_Module_2.jpg" alt="RSVP-Ready Evening Edit">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option2/Branding_Module_3.jpg" alt="Designer Spotlight Versace">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option2/Branding_Module_4.jpg" alt="For The Guys Luxes Tuxes">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option2/Branding_Module_5.jpg" alt="What To Pack Vacation Shop">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="branding-card">
+          <img src="assets/shoe_collection_promo.png" alt="Saks Exclusives Designer Edit">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label">SAKS EXCLUSIVES</span>
+              <h2 class="card-title">DESIGNER EDIT</h2>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="branding-module">
+      <!-- <p>Option 3</p> -->
+      <div class="branding-track">
+        <div class="branding-card">
+          <img src="assets/option3/Branding_Module_1.png" alt="The Latest Party Statements">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option3/Branding_Module_2.png" alt="RSVP-Ready Evening Edit">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option3/Branding_Module_3.png" alt="Designer Spotlight Versace">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option3/Branding_Module_4.png" alt="For The Guys Luxes Tuxes">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option3/Branding_Module_5.png" alt="What To Pack Vacation Shop">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/shoe_collection_promo.png" alt="Saks Exclusives Designer Edit">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label">SAKS EXCLUSIVES</span>
+              <h2 class="card-title">DESIGNER EDIT</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons({
+      attrs: {
+        'stroke-width': 1.25
+      }
+    });
+
+    // Hero Video Transition Logic
+    const heroVideo = document.getElementById('hero-video');
+    const heroBackupImg = document.getElementById('hero-backup-img');
+    const heroVideoControls = document.getElementById('hero-video-controls');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+
+    // Muted by default as per request
+    if (heroVideo) {
+      heroVideo.muted = true;
+
+      heroVideo.addEventListener('canplaythrough', () => {
+        heroVideo.classList.add('ready');
+        heroBackupImg.classList.add('fade-out');
+        heroVideoControls.classList.add('visible');
+        heroVideo.play().catch(error => {
+          console.log("Autoplay was prevented:", error);
+        });
+      });
+
+      playPauseBtn.addEventListener('click', () => {
+        if (heroVideo.paused) {
+          heroVideo.play();
+          playPauseBtn.innerHTML = '<i data-lucide="pause"></i>';
+        } else {
+          heroVideo.pause();
+          playPauseBtn.innerHTML = '<i data-lucide="play"></i>';
+        }
+        lucide.createIcons();
+      });
+
+      muteUnmuteBtn.addEventListener('click', () => {
+        heroVideo.muted = !heroVideo.muted;
+        if (heroVideo.muted) {
+          muteUnmuteBtn.innerHTML = '<i data-lucide="volume-x"></i>';
+        } else {
+          muteUnmuteBtn.innerHTML = '<i data-lucide="volume-2"></i>';
+        }
+        lucide.createIcons();
+      });
+    }
+
+    // Search Overlay Logic
+    const searchIcon = document.getElementById('search-icon');
+    const searchOverlay = document.getElementById('search-overlay');
+    const closeSearch = document.getElementById('close-search');
+    const searchInput = document.getElementById('search-input');
+
+    if (searchIcon && searchOverlay) {
+      searchIcon.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        setTimeout(() => searchInput.focus(), 300);
+      });
+
+      closeSearch.addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+          searchOverlay.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
