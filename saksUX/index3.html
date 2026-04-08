@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saks Fifth Avenue | UX Option 3</title>
+  <title>Saks Fifth Avenue | UX Option 2</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -158,26 +158,50 @@
 
   <main>
     <section class="hero">
-      <div class="hero-image">
-        <img src="assets/16x9_Shoppable_Theme1.webp" alt="Spring Collection 2024" id="hero-backup-img">
-        <video id="hero-video" muted loop playsinline preload="auto">
-          <source src="assets/video/SHOPPABLE_01_16X9.mp4" type="video/mp4">
-        </video>
-        <div class="hero-video-controls" id="hero-video-controls">
-          <button class="video-btn" id="play-pause-btn" aria-label="Play/Pause">
-            <i data-lucide="pause"></i>
-          </button>
-          <button class="video-btn" id="mute-unmute-btn" aria-label="Mute/Unmute">
-            <i data-lucide="volume-x"></i>
-          </button>
+      <div class="hero-frame">
+        <div class="hero-image">
+          <img src="assets/HeroMDGG.png" alt="Saks hero banner">
+          <div class="hero-dots" aria-label="Hero banner navigation">
+            <button type="button" class="hero-dot active" aria-label="Slide 1"></button>
+            <button type="button" class="hero-dot" aria-label="Slide 2"></button>
+            <button type="button" class="hero-dot" aria-label="Slide 3"></button>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="recommended-section" aria-label="Recommended Designers Slider">
+      <h1 class="recommended-title">YOUR RECOMMENDED DESIGNERS</h1>
+
+      <div class="recommended-slider" id="recommended-slider" aria-live="polite">
+        <div class="recommended-viewport">
+          <div class="recommended-card recommended-card--far-left" data-slot="far-left">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--left" data-slot="left">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--active" data-slot="active">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--right" data-slot="right">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--far-right" data-slot="far-right">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+        </div>
+
+        <div class="recommended-dots" id="recommended-dots" role="tablist" aria-label="Recommended designers"></div>
+
+        <div class="recommended-designer" id="recommended-designer-name"></div>
       </div>
     </section>
 
     <section class="branding-module">
       <div class="branding-track">
         <div class="branding-card">
-          <img src="assets/option3/Branding_Module_1.png" alt="The Latest Party Statements">
+          <img src="assets/BM_OPTION_3/BrandingModule_1.png" alt="The Latest Party Statements">
           <div class="card-overlay">
             <div class="card-text">
               <span class="card-label"></span>
@@ -186,7 +210,7 @@
           </div>
         </div>
         <div class="branding-card">
-          <img src="assets/option3/Branding_Module_2.png" alt="RSVP-Ready Evening Edit">
+          <img src="assets/BM_OPTION_3/BrandingModule_2.png" alt="RSVP-Ready Evening Edit">
           <div class="card-overlay">
             <div class="card-text">
               <span class="card-label"></span>
@@ -195,7 +219,7 @@
           </div>
         </div>
         <div class="branding-card">
-          <img src="assets/option3/Branding_Module_3.png" alt="Designer Spotlight Versace">
+          <img src="assets/BM_OPTION_3/BrandingModule_3.png" alt="Designer Spotlight Versace">
           <div class="card-overlay">
             <div class="card-text">
               <span class="card-label"></span>
@@ -204,7 +228,7 @@
           </div>
         </div>
         <div class="branding-card">
-          <img src="assets/option3/Branding_Module_4.png" alt="For The Guys Luxes Tuxes">
+          <img src="assets/BM_OPTION_3/BrandingModule_4.png" alt="For The Guys Luxes Tuxes">
           <div class="card-overlay">
             <div class="card-text">
               <span class="card-label"></span>
@@ -212,24 +236,15 @@
             </div>
           </div>
         </div>
-        <div class="branding-card">
-          <img src="assets/option3/Branding_Module_5.png" alt="What To Pack Vacation Shop">
+        <!-- <div class="branding-card">
+          <img src="assets/BM_OPTION_3/BrandingModule_4.png" alt="What To Pack Vacation Shop">
           <div class="card-overlay">
             <div class="card-text">
               <span class="card-label"></span>
               <h2 class="card-title"></h2>
             </div>
           </div>
-        </div>
-        <div class="branding-card">
-          <img src="assets/shoe_collection_promo.png" alt="Saks Exclusives Designer Edit">
-          <div class="card-overlay">
-            <div class="card-text">
-              <span class="card-label">SAKS EXCLUSIVES</span>
-              <h2 class="card-title">DESIGNER EDIT</h2>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </main>
@@ -271,6 +286,145 @@
         lucide.createIcons();
       });
     }
+
+    // Recommended Designers Slider (3 overlapping cards)
+    (function initRecommendedSlider() {
+      const sliderEl = document.getElementById('recommended-slider');
+      if (!sliderEl) return;
+
+      const designerNameEl = document.getElementById('recommended-designer-name');
+      const dotsEl = document.getElementById('recommended-dots');
+
+      const farLeftCard = sliderEl.querySelector('.recommended-card--far-left');
+      const leftCard = sliderEl.querySelector('.recommended-card--left');
+      const activeCard = sliderEl.querySelector('.recommended-card--active');
+      const rightCard = sliderEl.querySelector('.recommended-card--right');
+      const farRightCard = sliderEl.querySelector('.recommended-card--far-right');
+
+      // Replace these with your CDN image links (and optionally update the names).
+      const slides = [
+        { name: 'Ulla Johnson', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/de1c048b-1475-4a4c-b08c-59b154d66a88?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 2', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/da67b711-da48-4706-b175-e3a22978c9a7?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 3', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/ac00c421-5661-4a0c-bff0-1eeb9ca3c29a?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 4', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/28f8b570-7706-4ba9-bb2e-078e89066114?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 5', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/cc7a4122-cc44-470a-9981-b97efcf9ff04?wid=768&hei=960&fmt=webp' },
+      ];
+
+      let currentIndex = 0;
+      let animating = false;
+      const animDurationMs = 520;
+
+      function setSlotImages() {
+        const n = slides.length;
+        const farLeftIndex = (currentIndex - 2 + n) % n;
+        const leftIndex = (currentIndex - 1 + n) % n;
+        const rightIndex = (currentIndex + 1) % n;
+        const farRightIndex = (currentIndex + 2) % n;
+
+        const farLeftImg = farLeftCard.querySelector('img.recommended-img');
+        const leftImg = leftCard.querySelector('img.recommended-img');
+        const activeImg = activeCard.querySelector('img.recommended-img');
+        const rightImg = rightCard.querySelector('img.recommended-img');
+        const farRightImg = farRightCard.querySelector('img.recommended-img');
+
+        farLeftImg.src = slides[farLeftIndex].img;
+        farLeftImg.alt = slides[farLeftIndex].name;
+        leftImg.src = slides[leftIndex].img;
+        leftImg.alt = slides[leftIndex].name;
+        activeImg.src = slides[currentIndex].img;
+        activeImg.alt = slides[currentIndex].name;
+        rightImg.src = slides[rightIndex].img;
+        rightImg.alt = slides[rightIndex].name;
+        farRightImg.src = slides[farRightIndex].img;
+        farRightImg.alt = slides[farRightIndex].name;
+
+        designerNameEl.textContent = slides[currentIndex].name;
+      }
+
+      function renderDots() {
+        dotsEl.innerHTML = '';
+        slides.forEach((s, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'recommended-dot' + (idx === currentIndex ? ' active' : '');
+          btn.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+          btn.setAttribute('role', 'tab');
+          btn.dataset.targetIndex = String(idx);
+          btn.addEventListener('click', () => {
+            const target = Number(btn.dataset.targetIndex);
+            goToIndex(target);
+          });
+          dotsEl.appendChild(btn);
+        });
+      }
+
+      function updateDotsActive() {
+        const n = dotsEl.children.length;
+        for (let i = 0; i < n; i++) {
+          const child = dotsEl.children[i];
+          if (Number(child.dataset.targetIndex) === currentIndex) child.classList.add('active');
+          else child.classList.remove('active');
+        }
+      }
+
+      function stepToNext() {
+        sliderEl.classList.remove('anim-prev');
+        sliderEl.classList.add('anim-next');
+
+        return new Promise(resolve => {
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            setSlotImages();
+            updateDotsActive();
+            sliderEl.classList.remove('anim-next');
+            resolve();
+          }, animDurationMs);
+        });
+      }
+
+      function stepToPrev() {
+        sliderEl.classList.remove('anim-next');
+        sliderEl.classList.add('anim-prev');
+
+        return new Promise(resolve => {
+          setTimeout(() => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            setSlotImages();
+            updateDotsActive();
+            sliderEl.classList.remove('anim-prev');
+            resolve();
+          }, animDurationMs);
+        });
+      }
+
+      async function goToIndex(targetIndex) {
+        if (animating) return;
+        if (slides.length <= 1) return;
+        if (targetIndex === currentIndex) return;
+
+        const n = slides.length;
+        // Forward distance from current -> target.
+        const distNext = (targetIndex - currentIndex + n) % n;
+        // Backward distance from current -> target.
+        const distPrev = (currentIndex - targetIndex + n) % n;
+
+        animating = true;
+        if (distNext <= distPrev) {
+          for (let i = 0; i < distNext; i++) {
+            await stepToNext();
+          }
+        } else {
+          for (let i = 0; i < distPrev; i++) {
+            await stepToPrev();
+          }
+        }
+        animating = false;
+      }
+
+      // Initial render
+      setSlotImages();
+      renderDots();
+    })();
 
     const searchOverlay = document.getElementById('search-overlay');
     const closeSearch = document.getElementById('close-search');
