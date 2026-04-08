@@ -430,9 +430,9 @@ ul {
 }
 
 .hero-frame {
-  background: #000000;
+  background: transparent;
   border-radius: 14px;
-  padding: 10px;
+  padding: 0;
 }
 
 .hero-image {
