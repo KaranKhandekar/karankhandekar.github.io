@@ -897,6 +897,159 @@ ul {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.18);
 }
 
+/* Instagram Strip */
+.instagram-strip {
+  padding: var(--spacing-2xl) 0;
+  background: var(--color-background);
+}
+
+.instagram-strip-header {
+  width: 100%;
+  margin: 0 0 var(--spacing-md);
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.instagram-strip-header h2 {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.instagram-strip-header a {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.instagram-scroll {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding: 0 var(--spacing-lg) 6px;
+  scroll-snap-type: x mandatory;
+}
+
+.instagram-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.instagram-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+}
+
+.ig-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  color: inherit;
+}
+
+.ig-card video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+  background: #ececec;
+}
+
+.ig-copy {
+  margin-top: 10px;
+}
+
+.ig-copy h3 {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  margin-bottom: 14px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.ig-copy span {
+  font-size: 11px;
+  margin-top: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+/* Centered compact Instagram variant (index3) */
+.instagram-strip--centered .instagram-scroll {
+  justify-content: center;
+  overflow: hidden;
+  gap: 12px;
+}
+
+.instagram-strip--centered .instagram-strip-header {
+  justify-content: center;
+}
+
+.instagram-strip--centered .instagram-strip-header h2 {
+  text-align: center;
+}
+
+.instagram-strip--centered .instagram-strip-header a {
+  display: none;
+}
+
+.instagram-strip--centered .ig-card {
+  flex: 0 0 220px;
+}
+
+.ig-media {
+  position: relative;
+}
+
+.ig-link {
+  display: block;
+  color: inherit;
+}
+
+.ig-media video {
+  border-radius: 8px;
+}
+
+.ig-video-controls {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  gap: 6px;
+  z-index: 3;
+}
+
+.ig-control-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.42);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ig-control-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 900px) {
+  .instagram-strip--centered .instagram-scroll {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
 /* Featured Grid */
 .featured-grid {
   padding: var(--spacing-2xl) 0;

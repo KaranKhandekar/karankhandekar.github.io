@@ -247,6 +247,82 @@
         </div>
       </div>
     </section>
+
+    <section class="instagram-strip instagram-strip--centered" aria-label="Instagram videos">
+      <div class="instagram-strip-header">
+        <h2>On Social</h2>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">View More</a>
+      </div>
+
+      <div class="instagram-scroll instagram-scroll--centered">
+        
+        <div class="ig-card ig-card--compact">
+          <div class="ig-media">
+            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
+              <video muted playsinline preload="metadata">
+                <source src="assets/insta_video/IG1.mp4" type="video/mp4">
+              </video>
+            </a>
+            <div class="ig-video-controls">
+              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
+                <i data-lucide="pause"></i>
+              </button>
+              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
+                <i data-lucide="volume-x"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ig-copy">
+            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
+            <span>Discover</span>
+          </div>
+        </div>
+
+        <div class="ig-card ig-card--compact">
+          <div class="ig-media">
+            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
+              <video muted playsinline preload="metadata">
+                <source src="assets/insta_video/IG2.mp4" type="video/mp4">
+              </video>
+            </a>
+            <div class="ig-video-controls">
+              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
+                <i data-lucide="pause"></i>
+              </button>
+              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
+                <i data-lucide="volume-x"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ig-copy">
+            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
+            <span>Discover</span>
+          </div>
+        </div>
+
+        <div class="ig-card ig-card--compact">
+          <div class="ig-media">
+            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
+              <video muted playsinline preload="metadata">
+                <source src="assets/insta_video/IG3.mp4" type="video/mp4">
+              </video>
+            </a>
+            <div class="ig-video-controls">
+              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
+                <i data-lucide="pause"></i>
+              </button>
+              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
+                <i data-lucide="volume-x"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ig-copy">
+            <h3>Between takes of our spring campaign with @lilamoss.</h3>
+            <span>Explore</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -424,6 +500,97 @@
       // Initial render
       setSlotImages();
       renderDots();
+    })();
+
+    // Instagram card controls (index2)
+    (function initInstagramVideoControls() {
+      const cards = document.querySelectorAll('.instagram-strip--centered .ig-card');
+      if (!cards.length) return;
+
+      const items = [];
+
+      function setPlayIcon(button, isPlaying) {
+        button.innerHTML = isPlaying ? '<i data-lucide="pause"></i>' : '<i data-lucide="play"></i>';
+      }
+
+      cards.forEach(card => {
+        const video = card.querySelector('video');
+        const playBtn = card.querySelector('.ig-play-toggle');
+        const muteBtn = card.querySelector('.ig-mute-toggle');
+        if (!video || !playBtn || !muteBtn) return;
+
+        video.muted = true;
+        video.currentTime = 0;
+        setPlayIcon(playBtn, false);
+        muteBtn.innerHTML = '<i data-lucide="volume-x"></i>';
+
+        items.push({ video, playBtn, muteBtn });
+      });
+
+      if (!items.length) return;
+
+      let currentIdx = 0;
+      let autoAdvance = true;
+
+      function syncPlayIcons() {
+        items.forEach((item, idx) => setPlayIcon(item.playBtn, idx === currentIdx && !item.video.paused));
+        lucide.createIcons();
+      }
+
+      function playOnly(index) {
+        items.forEach((item, idx) => {
+          if (idx === index) {
+            item.video.play().catch(() => {});
+          } else {
+            item.video.pause();
+            item.video.currentTime = 0;
+          }
+        });
+        currentIdx = index;
+        syncPlayIcons();
+      }
+
+      function playNextInSequence() {
+        if (!autoAdvance) return;
+        const nextIdx = (currentIdx + 1) % items.length;
+        playOnly(nextIdx);
+      }
+
+      items.forEach((item, idx) => {
+        item.video.addEventListener('ended', () => {
+          if (idx === currentIdx) playNextInSequence();
+        });
+
+        item.playBtn.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (idx !== currentIdx) {
+            autoAdvance = true;
+            playOnly(idx);
+            return;
+          }
+
+          if (item.video.paused) {
+            autoAdvance = true;
+            item.video.play().catch(() => {});
+          } else {
+            autoAdvance = false;
+            item.video.pause();
+          }
+          syncPlayIcons();
+        });
+
+        item.muteBtn.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          item.video.muted = !item.video.muted;
+          item.muteBtn.innerHTML = item.video.muted ? '<i data-lucide="volume-x"></i>' : '<i data-lucide="volume-2"></i>';
+          lucide.createIcons();
+        });
+      });
+
+      playOnly(0);
     })();
 
     const searchOverlay = document.getElementById('search-overlay');
