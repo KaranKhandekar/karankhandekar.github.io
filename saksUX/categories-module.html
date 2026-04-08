@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categories to Explore</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #111;
+  }
+
+  .categories-module {
+    padding: 32px 40px 40px;
+    background: #fff;
+    position: relative;
+  }
+
+  .module-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .module-header-left {}
+
+  .module-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #111;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: text;
+    line-height: 1.3;
+  }
+
+  .module-subtitle {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: text;
+  }
+
+  [contenteditable]:hover {
+    outline: 1px dashed #ccc;
+    border-radius: 2px;
+  }
+
+  [contenteditable]:focus {
+    outline: 1px solid #aaa;
+    border-radius: 2px;
+    padding: 1px 3px;
+  }
+
+  .nav-arrows {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.15s, border-color 0.15s;
+    color: #111;
+  }
+
+  .nav-btn:hover {
+    background: #f5f5f5;
+    border-color: #999;
+  }
+
+  .nav-btn:active {
+    background: #eee;
+  }
+
+  .nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .nav-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .scroll-wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .scroll-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .category-card {
+    flex-shrink: 0;
+    width: 220px;
+    cursor: pointer;
+  }
+
+  .category-img-wrap {
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    background: #e8e8e8;
+    position: relative;
+    border-radius: 12px;
+  }
+
+  .category-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .category-card:hover .category-img-wrap img {
+    transform: scale(1.04);
+  }
+
+  .placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    background: #e8e8e8;
+    color: #bbb;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .category-label {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #111;
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: text;
+  }
+
+  .category-label:hover {
+    outline: 1px dashed #ccc;
+    border-radius: 2px;
+  }
+
+  .category-label:focus {
+    outline: 1px solid #aaa;
+    border-radius: 2px;
+    padding: 1px 3px;
+  }
+</style>
+</head>
+<body>
+
+<section class="categories-module">
+  <div class="module-header">
+    <div class="module-header-left">
+      <div class="module-title" contenteditable="true" spellcheck="false">Categories to Explore</div>
+      <div class="module-subtitle" contenteditable="true" spellcheck="false">Based On What Customers Are Shopping</div>
+    </div>
+    <div class="nav-arrows">
+      <button class="nav-btn" id="prevBtn" onclick="slide(-1)" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="nav-btn" id="nextBtn" onclick="slide(1)" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="scroll-wrapper" id="scrollWrapper">
+    <div class="scroll-track" id="scrollTrack">
+
+      <!-- Card 1 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/heels.jpg" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">👠</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Heels</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/evening-shoes.jpg" alt="Evening Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">👡</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Evening Shoes</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/clutches-pouches.jpg" alt="Clutches & Pouches" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">👜</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Clutches &amp; Pouches</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/bedding-essentials.jpg" alt="Bedding Essentials" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">🛏️</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Bedding Essentials</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/fragrances.jpg" alt="Fragrances" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">🧴</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Fragrances</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/tops.jpg" alt="Tops" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">👗</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Tops</div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/handbags.jpg" alt="Handbags" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">👝</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Handbags</div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/jewelry.jpg" alt="Jewelry" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">💍</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Jewelry</div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/sunglasses.jpg" alt="Sunglasses" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">🕶️</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Sunglasses</div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="category-card">
+        <div class="category-img-wrap">
+          <img src="images/scarves.jpg" alt="Scarves" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="placeholder-img" style="display:none">🧣</div>
+        </div>
+        <div class="category-label" contenteditable="true" spellcheck="false">Scarves</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const track = document.getElementById('scrollTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const CARD_WIDTH = 220 + 16; // width + gap
+  let currentIndex = 0;
+
+  function getVisibleCount() {
+    const wrapperWidth = document.getElementById('scrollWrapper').offsetWidth;
+    return Math.floor(wrapperWidth / CARD_WIDTH);
+  }
+
+  function getTotalCards() {
+    return track.querySelectorAll('.category-card').length;
+  }
+
+  function slide(direction) {
+    const total = getTotalCards();
+    const visible = getVisibleCount();
+    const maxIndex = total - visible;
+
+    currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+    track.style.transform = `translateX(-${currentIndex * CARD_WIDTH}px)`;
+    updateButtons();
+  }
+
+  function updateButtons() {
+    const total = getTotalCards();
+    const visible = getVisibleCount();
+    const maxIndex = total - visible;
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+  }
+
+  updateButtons();
+  window.addEventListener('resize', () => {
+    slide(0);
+    updateButtons();
+  });
+
+  document.getElementById('scrollWrapper').addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (e.deltaY > 0 || e.deltaX > 0) slide(1);
+    else slide(-1);
+  }, { passive: false });
+</script>
+
+</body>
+</html>
