@@ -445,6 +445,18 @@ ul {
   aspect-ratio: 2000 / 806;
 }
 
+.hero-image-full-b {
+  position: relative;
+  width: 100vw;          /* full viewport width */
+  left: 50%;             /* break out of any parent padding */
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 0;      /* remove rounded corners */
+  overflow: hidden;
+  display: block;
+  /* aspect-ratio: 2000 / 806; */
+}
+
 #hero-backup-img {
   width: 100%;
   height: auto;
@@ -459,6 +471,13 @@ ul {
 }
 
 .hero-image img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image-full-b img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1410,4 +1429,265 @@ ul {
   outline: 1px solid #aaa;
   border-radius: 2px;
   padding: 1px 3px;
+}
+
+/* ─── New In Section ─────────────────────────────────────────── */
+.new-in-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px var(--spacing-md);
+}
+
+.new-in-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* LEFT copy column */
+.new-in-copy {
+  flex: 0 0 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.new-in-count {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.new-in-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.new-in-desc {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 440px;
+}
+
+.new-in-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 13px 32px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  width: fit-content;
+  transition: opacity 0.2s ease;
+}
+
+.new-in-btn:hover { opacity: 0.75; }
+
+/* RIGHT product grid */
+.new-in-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.new-in-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.new-in-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #d4d4d4;       /* same grey as in the screenshot */
+}
+
+.new-in-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.new-in-card:hover .new-in-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* shown only when image fails to load */
+.new-in-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #d4d4d4;
+  position: absolute;
+  inset: 0;
+}
+
+.new-in-brand {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .new-in-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .new-in-copy { flex: none; width: 100%; }
+  .new-in-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .new-in-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}
+
+/* ─── Two Image Banner ───────────────────────────────────────── */
+.two-banner-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;                   /* no space between images */
+  width: 100vw;             /* full bleed */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.two-banner-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.two-banner-img-wrap {
+  width: 100%;
+  height: 100vh;            /* full vertical screen height */
+  background: #c8c8c8;
+}
+
+.two-banner-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.two-banner-card:hover .two-banner-img-wrap img {
+  transform: scale(1.03);
+}
+
+.two-banner-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #c8c8c8;
+}
+
+/* CTA overlay — sits bottom-left of the left card */
+.two-banner-copy {
+  position: absolute;
+  bottom: 48px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.two-banner-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  mix-blend-mode: normal;
+  /* keep readable over any image */
+  text-shadow: 0 1px 8px rgba(0,0,0,0.18);
+}
+
+.two-banner-body {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.two-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  padding: 13px 32px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.two-banner-btn:hover { opacity: 0.75; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .two-banner-section {
+    grid-template-columns: 1fr;
+  }
+  .two-banner-copy {
+    bottom: 32px;
+    left: 24px;
+  }
+}
+
+/* ─── Full Bleed Single Banner ───────────────────────────────── */
+.full-bleed-banner {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 80px;
+}
+
+.full-bleed-img-wrap {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.full-bleed-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* no cropping — full image always visible */
+  object-position: center center;
+  display: block;
+  background: #ffffff;        /* fills letterbox gaps if any */
+}
+
+.full-bleed-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #c8c8c8;
 }
