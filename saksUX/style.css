@@ -1864,6 +1864,53 @@ ul {
 }
 
 /* --- NEW ARRIVALS: REFINED LAYOUT --- */
+
+/* --- NEW PROMO CARD (ADDITION) --- */
+.arrivals-card--promo {
+  background: #000 !important; /* Solid black as per your screenshot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 calc((100vw - 40px - (5 * 12px)) / 6); /* Keeps 6-card width */
+  aspect-ratio: 3 / 4; 
+  cursor: pointer;
+}
+
+.promo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.promo-text {
+  font-family: var(--font-sans); /* Barlow Condensed */
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 60px; /* Large vertical gap like your image */
+}
+
+.promo-link {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.arrivals-card--promo:hover .promo-link {
+  opacity: 0.7;
+}
+
 .arrivals-section {
   width: 100vw;
   position: relative;
