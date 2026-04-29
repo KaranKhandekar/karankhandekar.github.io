@@ -2261,3 +2261,24 @@ ul {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* --- RESPONSIVE FULL-WIDTH IMAGE --- */
+.full-width-image-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  /* Perfectly centers the 100vw section to cover edge-to-edge */
+  transform: translateX(-50%); 
+  margin: 80px 0;
+  overflow: hidden;
+  background: #f9f9f9;
+}
+
+.full-width-image-section img {
+  width: 100%;
+  /* Ensures the height adjusts naturally as the screen narrows */
+  height: auto; 
+  display: block;
+  /* Removes any baseline gaps */
+  vertical-align: middle; 
+}
