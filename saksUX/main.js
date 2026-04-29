@@ -12,39 +12,33 @@ document.addEventListener('DOMContentLoaded', function () {
   let categoryIndex = 0;
 
   function getVisibleCount() {
-    return Math.floor(document.getElementById('scrollWrapper').offsetWidth / CARD_WIDTH);
+    const wrapper = document.getElementById('scrollWrapper');
+    return wrapper ? Math.floor(wrapper.offsetWidth / CARD_WIDTH) : 0;
   }
 
   function getTotalCards() {
-    return track.querySelectorAll('.category-card').length;
+    return track ? track.querySelectorAll('.category-card').length : 0;
   }
 
-  function slide(direction) {
+  function slideCategories(direction) {
+    if (!track) return;
     const maxIndex = getTotalCards() - getVisibleCount();
     categoryIndex = Math.max(0, Math.min(categoryIndex + direction, maxIndex));
     track.style.transform = `translateX(-${categoryIndex * CARD_WIDTH}px)`;
-    updateButtons();
+    updateCategoryButtons();
   }
 
-  function updateButtons() {
+  function updateCategoryButtons() {
+    if (!prevBtn || !nextBtn) return;
     prevBtn.disabled = categoryIndex === 0;
     nextBtn.disabled = categoryIndex >= getTotalCards() - getVisibleCount();
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => slide(-1));
-  if (nextBtn) nextBtn.addEventListener('click', () => slide(1));
+  if (prevBtn) prevBtn.addEventListener('click', () => slideCategories(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => slideCategories(1));
 
-  const scrollWrapper = document.getElementById('scrollWrapper');
-  if (scrollWrapper) {
-    scrollWrapper.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      if (e.deltaY > 0 || e.deltaX > 0) slide(1);
-      else slide(-1);
-    }, { passive: false });
-  }
-
-  window.addEventListener('resize', () => { slide(0); updateButtons(); });
-  updateButtons();
+  window.addEventListener('resize', () => { slideCategories(0); updateCategoryButtons(); });
+  updateCategoryButtons();
 
 
   // ─── Hero Video ─────────────────────────────────────────────────
@@ -122,78 +116,33 @@ document.addEventListener('DOMContentLoaded', function () {
       const farRightIndex = (currentIndex + 2) % n;
 
       farLeftCard.querySelector('img.recommended-img').src  = slides[farLeftIndex].img;
-      farLeftCard.querySelector('img.recommended-img').alt  = slides[farLeftIndex].name;
       leftCard.querySelector('img.recommended-img').src     = slides[leftIndex].img;
-      leftCard.querySelector('img.recommended-img').alt     = slides[leftIndex].name;
       activeCard.querySelector('img.recommended-img').src   = slides[currentIndex].img;
-      activeCard.querySelector('img.recommended-img').alt   = slides[currentIndex].name;
       rightCard.querySelector('img.recommended-img').src    = slides[rightIndex].img;
-      rightCard.querySelector('img.recommended-img').alt    = slides[rightIndex].name;
       farRightCard.querySelector('img.recommended-img').src = slides[farRightIndex].img;
-      farRightCard.querySelector('img.recommended-img').alt = slides[farRightIndex].name;
 
       designerNameEl.textContent = slides[currentIndex].name;
     }
 
     function renderDots() {
+      if (!dotsEl) return;
       dotsEl.innerHTML = '';
       slides.forEach((s, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'recommended-dot' + (idx === currentIndex ? ' active' : '');
-        btn.setAttribute('aria-label', `Go to slide ${idx + 1}`);
-        btn.setAttribute('role', 'tab');
         btn.dataset.targetIndex = String(idx);
         btn.addEventListener('click', () => goToIndex(Number(btn.dataset.targetIndex)));
         dotsEl.appendChild(btn);
       });
     }
 
-    function updateDotsActive() {
-      Array.from(dotsEl.children).forEach(child => {
-        child.classList.toggle('active', Number(child.dataset.targetIndex) === currentIndex);
-      });
-    }
-
-    function stepToNext() {
-      sliderEl.classList.remove('anim-prev');
-      sliderEl.classList.add('anim-next');
-      return new Promise(resolve => {
-        setTimeout(() => {
-          currentIndex = (currentIndex + 1) % slides.length;
-          setSlotImages();
-          updateDotsActive();
-          sliderEl.classList.remove('anim-next');
-          resolve();
-        }, animDurationMs);
-      });
-    }
-
-    function stepToPrev() {
-      sliderEl.classList.remove('anim-next');
-      sliderEl.classList.add('anim-prev');
-      return new Promise(resolve => {
-        setTimeout(() => {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          setSlotImages();
-          updateDotsActive();
-          sliderEl.classList.remove('anim-prev');
-          resolve();
-        }, animDurationMs);
-      });
-    }
-
     async function goToIndex(targetIndex) {
-      if (animating || slides.length <= 1 || targetIndex === currentIndex) return;
-      const n = slides.length;
-      const distNext = (targetIndex - currentIndex + n) % n;
-      const distPrev = (currentIndex - targetIndex + n) % n;
+      if (animating || targetIndex === currentIndex) return;
       animating = true;
-      if (distNext <= distPrev) {
-        for (let i = 0; i < distNext; i++) await stepToNext();
-      } else {
-        for (let i = 0; i < distPrev; i++) await stepToPrev();
-      }
+      currentIndex = targetIndex;
+      setSlotImages();
+      renderDots();
       animating = false;
     }
 
@@ -205,83 +154,27 @@ document.addEventListener('DOMContentLoaded', function () {
   // ─── Instagram Video Controls ────────────────────────────────────
   (function initInstagramVideoControls() {
     const cards = document.querySelectorAll('.instagram-strip--centered .ig-card');
-    if (!cards.length) return;
-
-    const items = [];
-
-    function setPlayIcon(button, isPlaying) {
-      button.innerHTML = isPlaying ? '<i data-lucide="pause"></i>' : '<i data-lucide="play"></i>';
-    }
-
     cards.forEach(card => {
-      const video   = card.querySelector('video');
+      const video = card.querySelector('video');
       const playBtn = card.querySelector('.ig-play-toggle');
       const muteBtn = card.querySelector('.ig-mute-toggle');
       if (!video || !playBtn || !muteBtn) return;
 
-      video.muted = true;
-      video.currentTime = 0;
-      setPlayIcon(playBtn, false);
-      muteBtn.innerHTML = '<i data-lucide="volume-x"></i>';
-      items.push({ video, playBtn, muteBtn });
-    });
-
-    if (!items.length) return;
-
-    let currentIdx = 0;
-    let autoAdvance = true;
-
-    function syncPlayIcons() {
-      items.forEach((item, idx) => setPlayIcon(item.playBtn, idx === currentIdx && !item.video.paused));
-      lucide.createIcons();
-    }
-
-    function playOnly(index) {
-      items.forEach((item, idx) => {
-        if (idx === index) {
-          item.video.play().catch(() => {});
-        } else {
-          item.video.pause();
-          item.video.currentTime = 0;
-        }
+      playBtn.addEventListener('click', () => {
+        if (video.paused) video.play(); else video.pause();
+        lucide.createIcons();
       });
-      currentIdx = index;
-      syncPlayIcons();
-    }
-
-    items.forEach((item, idx) => {
-      item.video.addEventListener('ended', () => {
-        if (idx === currentIdx && autoAdvance) playOnly((currentIdx + 1) % items.length);
-      });
-
-      item.playBtn.addEventListener('click', e => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (idx !== currentIdx) { autoAdvance = true; playOnly(idx); return; }
-        if (item.video.paused) { autoAdvance = true; item.video.play().catch(() => {}); }
-        else { autoAdvance = false; item.video.pause(); }
-        syncPlayIcons();
-      });
-
-      item.muteBtn.addEventListener('click', e => {
-        e.preventDefault();
-        e.stopPropagation();
-        item.video.muted = !item.video.muted;
-        item.muteBtn.innerHTML = item.video.muted
-          ? '<i data-lucide="volume-x"></i>'
-          : '<i data-lucide="volume-2"></i>';
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
         lucide.createIcons();
       });
     });
-
-    playOnly(0);
   })();
 
 
   // ─── Search Overlay ──────────────────────────────────────────────
   const searchOverlay = document.getElementById('search-overlay');
   const closeSearch   = document.getElementById('close-search');
-  const searchInput   = document.getElementById('search-input');
 
   if (closeSearch && searchOverlay) {
     closeSearch.addEventListener('click', () => {
@@ -290,3 +183,83 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+
+// ─── NEW ARRIVALS: PERFECT 6-CARD SCROLL ────────────────────────
+(function initArrivalsSlider() {
+  const track = document.getElementById('arrivalsTrack');
+  const prevBtn = document.getElementById('arrivalsPrev');
+  const nextBtn = document.getElementById('arrivalsNext');
+  
+  if (!track || !prevBtn || !nextBtn) return;
+
+  let index = 0;
+
+  function slide(dir) {
+    const cards = track.querySelectorAll('.arrivals-card');
+    if (cards.length === 0) return;
+
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 12; // Matches your new tighter CSS gap
+    const scrollAmount = cardWidth + gap;
+    
+    // Exactly 6 cards are visible at a time
+    const visibleCount = 6;
+    const maxIndex = Math.max(0, cards.length - visibleCount);
+
+    index = Math.max(0, Math.min(index + dir, maxIndex));
+    
+    // Apply the transform
+    track.style.transform = `translateX(-${index * scrollAmount}px)`;
+    
+    // Update button visual feedback (Image 1 style)
+    prevBtn.style.opacity = index === 0 ? "0.2" : "1";
+    prevBtn.disabled = index === 0;
+    
+    nextBtn.style.opacity = index >= maxIndex ? "0.2" : "1";
+    nextBtn.disabled = index >= maxIndex;
+  }
+
+  prevBtn.addEventListener('click', () => slide(-1));
+  nextBtn.addEventListener('click', () => slide(1));
+  
+  // Recalculate on window resize for edge-to-edge precision
+  window.addEventListener('resize', () => slide(0));
+
+  // Initialize
+  slide(0);
+})();
+
+(function initCategoriesSlider() {
+  const track = document.getElementById('categoriesTrack');
+  const prevBtn = document.getElementById('categoriesPrev');
+  const nextBtn = document.getElementById('categoriesNext');
+  
+  if (!track || !prevBtn || !nextBtn) return;
+
+  let index = 0;
+
+  function slide(dir) {
+    const cards = track.querySelectorAll('.category-explore-card');
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = 16;
+    const scrollAmount = cardWidth + gap;
+    
+    // Total items minus the 6 that are visible
+    const maxIndex = Math.max(0, cards.length - 6);
+
+    index = Math.max(0, Math.min(index + dir, maxIndex));
+    track.style.transform = `translateX(-${index * scrollAmount}px)`;
+    
+    // Update arrow visibility/opacity
+    prevBtn.style.opacity = index === 0 ? "0.2" : "1";
+    nextBtn.style.opacity = index >= maxIndex ? "0.2" : "1";
+  }
+
+  prevBtn.addEventListener('click', () => slide(-1));
+  nextBtn.addEventListener('click', () => slide(1));
+  window.addEventListener('resize', () => slide(0));
+  
+  // Initial State
+  slide(0);
+})();

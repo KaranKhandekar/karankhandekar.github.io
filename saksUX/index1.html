@@ -7,7 +7,7 @@
   <title>Saks Fifth Avenue | UX Option 2</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="main.js"></script>
+  <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -160,8 +160,8 @@
   <main>
     <section class="hero">
       <div class="hero-frame">
-        <div class="hero-image">
-          <img src="assets/heroBanner/HeroMDGG.png" alt="Saks hero banner">
+        <div class="hero-image-full-b">
+          <img src="assets/option5/hero.png" alt="Saks hero banner">
           <div class="hero-dots" aria-label="Hero banner navigation">
             <button type="button" class="hero-dot active" aria-label="Slide 1"></button>
             <button type="button" class="hero-dot" aria-label="Slide 2"></button>
@@ -171,605 +171,377 @@
       </div>
     </section>
 
-    <section class="recommended-section" aria-label="Recommended Designers Slider">
-      <h1 class="recommended-title">YOUR RECOMMENDED DESIGNERS</h1>
+<!-- ─── New Arrivals Horizontal Scroll ───────────────────────── -->
+<section class="arrivals-section">
 
-      <div class="recommended-slider" id="recommended-slider" aria-live="polite">
-        <div class="recommended-viewport">
-          <div class="recommended-card recommended-card--far-left" data-slot="far-left">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--left" data-slot="left">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--active" data-slot="active">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--right" data-slot="right">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--far-right" data-slot="far-right">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-        </div>
+  <div class="arrivals-header">
+    <div class="arrivals-header-text">
+      <h1 class="arrivals-title">NEW ARRIVALS</h1>
+      <p class="arrivals-sub">Fresh Finds Of The Week</p>
+    </div>
+    <div class="arrivals-nav">
+      <button class="arrivals-arrow" id="arrivalsPrev" aria-label="Previous">
+        <i data-lucide="chevron-left"></i>
+      </button>
+      <button class="arrivals-arrow" id="arrivalsNext" aria-label="Next">
+        <i data-lucide="chevron-right"></i>
+      </button>
+    </div>
+  </div>
 
-        <div class="recommended-dots" id="recommended-dots" role="tablist" aria-label="Recommended designers"></div>
+  <div class="arrivals-track-wrap" id="arrivalsWrap">
+    <div class="arrivals-track" id="arrivalsTrack">
 
-        <div class="recommended-designer" id="recommended-designer-name"></div>
-      </div>
-    </section>
-
-    <section class="branding-module">
-      <div class="branding-track">
-        <div class="branding-card">
-          <img src="assets/option1/BM_1.png" alt="The Latest Party Statements">
-          <div class="card-overlay">
-            <div class="card-text">
-              <span class="card-label"></span>
-              <h2 class="card-title"></h2>
-            </div>
-          </div>
-        </div>
-        <div class="branding-card">
-          <img src="assets/option1/BM_2.png" alt="The Latest Party Statements">          <div class="card-overlay">
-            <div class="card-text">
-              <span class="card-label"></span>
-              <h2 class="card-title"></h2>
-            </div>
-          </div>
-        </div>
-        <div class="branding-card">
-          <img src="assets/option1/BM_3.png" alt="The Latest Party Statements">          <div class="card-overlay">
-            <div class="card-text">
-              <span class="card-label"></span>
-              <h2 class="card-title"></h2>
-            </div>
-          </div>
-        </div>
-        <div class="branding-card">
-          <img src="assets/option1/BM_4.png" alt="The Latest Party Statements">          <div class="card-overlay">
-            <div class="card-text">
-              <span class="card-label"></span>
-              <h2 class="card-title"></h2>
-            </div>
-          </div>
-        </div>
-        <div class="branding-card">
-          <img src="assets/option1/BM_5.png" alt="The Latest Party Statements">
-          <div class="card-overlay">
-            <div class="card-text">
-              <span class="card-label"></span>
-              <h2 class="card-title"></h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="categories-module">
-      <div class="module-header">
-        <div class="module-header-left">
-          <div class="module-title" contenteditable="true" spellcheck="false">Categories to Explore</div>
-          <div class="module-subtitle" contenteditable="true" spellcheck="false">Based On What Customers Are Shopping</div>
-        </div>
-        <div class="nav-arrows">
-          <button class="nav-btn" id="prevBtn" onclick="slide(-1)" aria-label="Previous">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
-          <button class="nav-btn" id="nextBtn" onclick="slide(1)" aria-label="Next">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+      <!-- Card 1 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na1.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
           </button>
         </div>
-      </div>
-    
-      <div class="scroll-wrapper" id="scrollWrapper">
-        <div class="scroll-track" id="scrollTrack">
-    
-          <!-- Card 0 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/0.png" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👠</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false"></div>
-          </div>
-          
-          <!-- Card 1 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/1.webp" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👠</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Dresses</div>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/2.webp" alt="Evening Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👡</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Girls' Tops</div>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/3.webp" alt="Clutches & Pouches" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👜</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Flats</div>
-          </div>
-    
-          <!-- Card 4 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/4.webp" alt="Bedding Essentials" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🛏️</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">venings shoes</div>
-          </div>
-    
-          <!-- Card 5 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/5.webp" alt="Fragrances" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🧴</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Clutches & Pouches</div>
-          </div>
-    
-          <!-- Card 6 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/6.webp" alt="Tops" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👗</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Bedding Essentials</div>
-          </div>
-    
-          <!-- Card 7 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/7.webp" alt="Handbags" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👝</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Fragrances</div>
-          </div>
-    
-          <!-- Card 8 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/8.webp" alt="Jewelry" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">💍</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Top</div>
-          </div>
-    
-          <!-- Card 9 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/9.webp" alt="Sunglasses" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🕶️</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Sunglasses</div>
-          </div>
-    
-          <!-- Card 10 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/10.webp" alt="Scarves" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🧣</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Scarves</div>
-          </div>
-    
+        <div class="arrivals-info">
+          <p class="arrivals-brand">ALICE + OLIVIA</p>
+          <p class="arrivals-name">Hana Floral Stretch-Cotton Midi-Dress</p>
+          <p class="arrivals-price">$795</p>
         </div>
       </div>
-    </section>
 
-    <section class="instagram-strip instagram-strip--centered" aria-label="Instagram videos">
-      <div class="instagram-strip-header">
-        <h2>See It. Love It. Own It.</h2>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">View More</a>
+      <!-- Card 2 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na2.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
+          </button>
+        </div>
+        <div class="arrivals-info">
+          <p class="arrivals-brand">Brand Name</p>
+          <p class="arrivals-name">Product Name</p>
+          <p class="arrivals-price">$000</p>
+        </div>
       </div>
 
-      <div class="instagram-scroll instagram-scroll--centered">
+      <!-- Card 3 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na3.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
+          </button>
+        </div>
+        <div class="arrivals-info">
+          <p class="arrivals-brand">Brand Name</p>
+          <p class="arrivals-name">Product Name</p>
+          <p class="arrivals-price">$000</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na4.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
+          </button>
+        </div>
+        <div class="arrivals-info">
+          <p class="arrivals-brand">Brand Name</p>
+          <p class="arrivals-name">Product Name</p>
+          <p class="arrivals-price">$000</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na5.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
+          </button>
+        </div>
+        <div class="arrivals-info">
+          <p class="arrivals-brand">Brand Name</p>
+          <p class="arrivals-name">Product Name</p>
+          <p class="arrivals-price">$000</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na6.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
+          </button>
+        </div>
+        <div class="arrivals-info">
+          <p class="arrivals-brand">Brand Name</p>
+          <p class="arrivals-name">Product Name</p>
+          <p class="arrivals-price">$000</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="arrivals-card">
+        <div class="arrivals-img-wrap">
+          <img src="assets/option5/na/na7.webp" alt="Product"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="arrivals-placeholder"></div>
+          <button class="arrivals-wishlist" aria-label="Wishlist">
+            <i data-lucide="heart"></i>
+          </button>
+        </div>
+        <div class="arrivals-info">
+          <p class="arrivals-brand">Brand Name</p>
+          <p class="arrivals-name">Product Name</p>
+          <p class="arrivals-price">$000</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ─── Branding Module ──────────────────────────────────────── -->
+<section class="branding-module">
+  <div class="branding-track">
+    <div class="branding-card">
+      <img src="assets/option5/bm1.png" alt="The Latest Party Statements">
+      <div class="card-overlay">
+        <div class="card-text">
+          <span class="card-label"></span>
+          <h2 class="card-title"></h2>
+        </div>
+      </div>
+    </div>
+    <div class="branding-card">
+      <img src="assets/option5/bm2.png" alt="The Latest Party Statements">          <div class="card-overlay">
+        <div class="card-text">
+          <span class="card-label"></span>
+          <h2 class="card-title"></h2>
+        </div>
+      </div>
+    </div>
+    <div class="branding-card">
+      <img src="assets/option5/bm3.png" alt="The Latest Party Statements">          <div class="card-overlay">
+        <div class="card-text">
+          <span class="card-label"></span>
+          <h2 class="card-title"></h2>
+        </div>
+      </div>
+    </div>
+    <div class="branding-card">
+      <img src="assets/option5/bm4.png" alt="The Latest Party Statements">          <div class="card-overlay">
+        <div class="card-text">
+          <span class="card-label"></span>
+          <h2 class="card-title"></h2>
+        </div>
+      </div>
+    </div>
+    <div class="branding-card">
+      <img src="assets/option5/bm5.png" alt="The Latest Party Statements">
+      <div class="card-overlay">
+        <div class="card-text">
+          <span class="card-label"></span>
+          <h2 class="card-title"></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Full Bleed Single Banner ─────────────────────────────── -->
+<section class="full-bleed-banner">
+  <div class="full-bleed-img-wrap">
+    <img src="assets/option5/mens_collage 1.png" alt="Full bleed banner"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="full-bleed-placeholder"></div>
+  </div>
+</section>
+
+<!-- ─── Branding Module ─────────────────────────────────────────── -->
+<section class="product-grid-section">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="assets/option5/brandingModule/bm_image1.png" alt="Relaxed Fit Shirts">
+      </div>
+      <p class="product-name">Relaxed Fit Shirts</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="assets/option5/brandingModule/bm_image2.png" alt="Cargo Shorts">
+      </div>
+      <p class="product-name">Cargo Shorts</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="assets/option5/brandingModule/bm_image3.png" alt="Tote Bags">
+      </div>
+      <p class="product-name">Tote Bags</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="assets/option5/brandingModule/bm_image4.png" alt="Boat Shoes">
+      </div>
+      <p class="product-name">Boat Shoes</p>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="assets/option5/brandingModule/bm_image5.png" alt="Aviator Sunglasses">
+      </div>
+      <p class="product-name">Aviator Sunglasses</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Full Bleed Single Banner ─────────────────────────────── -->
+<section class="full-bleed-banner">
+  <div class="full-bleed-img-wrap">
+    <img src="assets/option5/chloe_1.png" alt="Full bleed banner"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <div class="full-bleed-placeholder"></div>
+  </div>
+</section>
+
+    
+<section class="categories-explore-section">
+  
+  <div class="categories-header">
+    <div class="categories-header-text">
+      <h2 class="categories-title">CATEGORIES TO EXPLORE</h2>
+      <p class="categories-sub">Based On What Customers Are Shopping</p>
+    </div>
+    <div class="categories-nav">
+      <button class="categories-arrow" id="categoriesPrev" aria-label="Previous">
+        <i data-lucide="chevron-left"></i>
+      </button>
+      <button class="categories-arrow" id="categoriesNext" aria-label="Next">
+        <i data-lucide="chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="categories-track-wrap">
+    <div class="categories-track" id="categoriesTrack">
+      
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c1.webp" alt="DRESSES">
+        </div>
+        <p class="category-explore-label">DRESSES</p>
+      </div>
+
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c2.webp" alt="GIRLS' TOPS">
+        </div>
+        <p class="category-explore-label">GIRLS' TOPS</p>
+      </div>
+
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c3.webp" alt="COATS">
+        </div>
+        <p class="category-explore-label">COATS</p>
+      </div>
+
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c4.webp" alt="ACKETS & BLAZERS">
+        </div>
+        <p class="category-explore-label">JACKETS & BLAZERS</p>
+      </div>
+
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c5.webp" alt="TOPS">
+        </div>
+        <p class="category-explore-label">TOPS</p>
+      </div>
+
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c6.webp" alt="SANDALS">
+        </div>
+        <p class="category-explore-label">SANDALS</p>
+      </div>
+
+      <div class="category-explore-card">
+        <div class="category-explore-img">
+          <img src="assets/option5/CATEGORIES_TO_EXPLORE/c7.webp" alt="HEELS">
+        </div>
+        <p class="category-explore-label">HEELS</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Offer Tray Section -->
+
+    <section class="offers-section">
+      <h2 class="offers-title">CURRENT SALES & OFFERS</h2>
+      
+      <div class="offers-grid">
         
-        <div class="ig-card ig-card--compact">
-          <div class="ig-media">
-            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
-              <video muted playsinline preload="metadata">
-                <source src="assets/insta_video/IG1.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="ig-video-controls">
-              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
-                <i data-lucide="pause"></i>
-              </button>
-              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
-                <i data-lucide="volume-x"></i>
-              </button>
-            </div>
+        <div class="offer-card">
+          <div class="offer-image-wrap offer-blue">
+            <img src="assets/option5/offer/offertray-1.png" alt="Get 10% Off Account">
           </div>
-          <div class="ig-copy">
-            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
-            <span>Discover</span>
+          <div class="offer-info">
+            <h3 class="offer-heading">CREATE A SAKS ACCOUNT FOR 10% OFF YOUR PURCHASE. ONLINE ONLY</h3>
+            <a href="#" class="offer-link">CREATE AN ACCOUNT</a>
+            <div class="offer-footer">
+              <a href="#" class="offer-details">DETAILS <i data-lucide="arrow-up-right"></i></a>
+            </div>
           </div>
         </div>
-
-        <div class="ig-card ig-card--compact">
-          <div class="ig-media">
-            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
-              <video muted playsinline preload="metadata">
-                <source src="assets/insta_video/IG2.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="ig-video-controls">
-              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
-                <i data-lucide="pause"></i>
-              </button>
-              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
-                <i data-lucide="volume-x"></i>
-              </button>
-            </div>
+    
+        <div class="offer-card">
+          <div class="offer-image-wrap offer-green">
+            <img src="assets/option5/offer/offertray-2.png" alt="Get 10% Off SMS">
           </div>
-          <div class="ig-copy">
-            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
-            <span>Discover</span>
+          <div class="offer-info">
+            <h3 class="offer-heading">SIGN UP AND GET 10% OFF YOUR NEXT PURCHASE. ONLINE ONLY</h3>
+            <a href="#" class="offer-link">Text HELLOSAKS to 75283</a>
           </div>
         </div>
+    
+      </div>
+    </section>
 
-        <div class="ig-card ig-card--compact">
-          <div class="ig-media">
-            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
-              <video muted playsinline preload="metadata">
-                <source src="assets/insta_video/IG3.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="ig-video-controls">
-              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
-                <i data-lucide="pause"></i>
-              </button>
-              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
-                <i data-lucide="volume-x"></i>
-              </button>
-            </div>
-          </div>
-          <div class="ig-copy">
-            <h3>Between takes of our spring campaign with @lilamoss.</h3>
-            <span>Explore</span>
-          </div>
+    <section class="hero">
+      <div class="hero-frame">
+        <div class="hero-image-full-b">
+          <img src="assets/option5/lastHeroModule.png" alt="Saks hero banner">
         </div>
       </div>
     </section>
+
   </main>
 
-  
-
-  <script>
-    const track = document.getElementById('scrollTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const CARD_WIDTH = 220 + 16; // width + gap
-    let currentIndex = 0;
-  
-    function getVisibleCount() {
-      const wrapperWidth = document.getElementById('scrollWrapper').offsetWidth;
-      return Math.floor(wrapperWidth / CARD_WIDTH);
-    }
-  
-    function getTotalCards() {
-      return track.querySelectorAll('.category-card').length;
-    }
-  
-    function slide(direction) {
-      const total = getTotalCards();
-      const visible = getVisibleCount();
-      const maxIndex = total - visible;
-  
-      currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
-      track.style.transform = `translateX(-${currentIndex * CARD_WIDTH}px)`;
-      updateButtons();
-    }
-  
-    function updateButtons() {
-      const total = getTotalCards();
-      const visible = getVisibleCount();
-      const maxIndex = total - visible;
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex >= maxIndex;
-    }
-  
-    updateButtons();
-    window.addEventListener('resize', () => {
-      slide(0);
-      updateButtons();
-    });
-  
-    document.getElementById('scrollWrapper').addEventListener('wheel', (e) => {
-      e.preventDefault();
-      if (e.deltaY > 0 || e.deltaX > 0) slide(1);
-      else slide(-1);
-    }, { passive: false });
-  </script>
-
-  <script>
-    lucide.createIcons({
-      attrs: { 'stroke-width': 1.25 }
-    });
-
-    const heroVideo = document.getElementById('hero-video');
-    const heroBackupImg = document.getElementById('hero-backup-img');
-    const heroVideoControls = document.getElementById('hero-video-controls');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
-
-    if (heroVideo) {
-      heroVideo.muted = true;
-      heroVideo.addEventListener('canplaythrough', () => {
-        heroVideo.classList.add('ready');
-        heroBackupImg.classList.add('fade-out');
-        heroVideoControls.classList.add('visible');
-        heroVideo.play().catch(console.error);
-      });
-
-      playPauseBtn.addEventListener('click', () => {
-        if (heroVideo.paused) {
-          heroVideo.play();
-          playPauseBtn.innerHTML = '<i data-lucide="pause"></i>';
-        } else {
-          heroVideo.pause();
-          playPauseBtn.innerHTML = '<i data-lucide="play"></i>';
-        }
-        lucide.createIcons();
-      });
-
-      muteUnmuteBtn.addEventListener('click', () => {
-        heroVideo.muted = !heroVideo.muted;
-        muteUnmuteBtn.innerHTML = heroVideo.muted ? '<i data-lucide="volume-x"></i>' : '<i data-lucide="volume-2"></i>';
-        lucide.createIcons();
-      });
-    }
-
-    // Recommended Designers Slider (3 overlapping cards)
-    (function initRecommendedSlider() {
-      const sliderEl = document.getElementById('recommended-slider');
-      if (!sliderEl) return;
-
-      const designerNameEl = document.getElementById('recommended-designer-name');
-      const dotsEl = document.getElementById('recommended-dots');
-
-      const farLeftCard = sliderEl.querySelector('.recommended-card--far-left');
-      const leftCard = sliderEl.querySelector('.recommended-card--left');
-      const activeCard = sliderEl.querySelector('.recommended-card--active');
-      const rightCard = sliderEl.querySelector('.recommended-card--right');
-      const farRightCard = sliderEl.querySelector('.recommended-card--far-right');
-
-      // Replace these with your CDN image links (and optionally update the names).
-      const slides = [
-        { name: 'Ulla Johnson', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/de1c048b-1475-4a4c-b08c-59b154d66a88?wid=768&hei=960&fmt=webp' },
-        { name: 'Designer 2', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/da67b711-da48-4706-b175-e3a22978c9a7?wid=768&hei=960&fmt=webp' },
-        { name: 'Designer 3', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/ac00c421-5661-4a0c-bff0-1eeb9ca3c29a?wid=768&hei=960&fmt=webp' },
-        { name: 'Designer 4', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/28f8b570-7706-4ba9-bb2e-078e89066114?wid=768&hei=960&fmt=webp' },
-        { name: 'Designer 5', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/cc7a4122-cc44-470a-9981-b97efcf9ff04?wid=768&hei=960&fmt=webp' },
-      ];
-
-      let currentIndex = 0;
-      let animating = false;
-      const animDurationMs = 520;
-
-      function setSlotImages() {
-        const n = slides.length;
-        const farLeftIndex = (currentIndex - 2 + n) % n;
-        const leftIndex = (currentIndex - 1 + n) % n;
-        const rightIndex = (currentIndex + 1) % n;
-        const farRightIndex = (currentIndex + 2) % n;
-
-        const farLeftImg = farLeftCard.querySelector('img.recommended-img');
-        const leftImg = leftCard.querySelector('img.recommended-img');
-        const activeImg = activeCard.querySelector('img.recommended-img');
-        const rightImg = rightCard.querySelector('img.recommended-img');
-        const farRightImg = farRightCard.querySelector('img.recommended-img');
-
-        farLeftImg.src = slides[farLeftIndex].img;
-        farLeftImg.alt = slides[farLeftIndex].name;
-        leftImg.src = slides[leftIndex].img;
-        leftImg.alt = slides[leftIndex].name;
-        activeImg.src = slides[currentIndex].img;
-        activeImg.alt = slides[currentIndex].name;
-        rightImg.src = slides[rightIndex].img;
-        rightImg.alt = slides[rightIndex].name;
-        farRightImg.src = slides[farRightIndex].img;
-        farRightImg.alt = slides[farRightIndex].name;
-
-        designerNameEl.textContent = slides[currentIndex].name;
-      }
-
-      function renderDots() {
-        dotsEl.innerHTML = '';
-        slides.forEach((s, idx) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'recommended-dot' + (idx === currentIndex ? ' active' : '');
-          btn.setAttribute('aria-label', `Go to slide ${idx + 1}`);
-          btn.setAttribute('role', 'tab');
-          btn.dataset.targetIndex = String(idx);
-          btn.addEventListener('click', () => {
-            const target = Number(btn.dataset.targetIndex);
-            goToIndex(target);
-          });
-          dotsEl.appendChild(btn);
-        });
-      }
-
-      function updateDotsActive() {
-        const n = dotsEl.children.length;
-        for (let i = 0; i < n; i++) {
-          const child = dotsEl.children[i];
-          if (Number(child.dataset.targetIndex) === currentIndex) child.classList.add('active');
-          else child.classList.remove('active');
-        }
-      }
-
-      function stepToNext() {
-        sliderEl.classList.remove('anim-prev');
-        sliderEl.classList.add('anim-next');
-
-        return new Promise(resolve => {
-          setTimeout(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            setSlotImages();
-            updateDotsActive();
-            sliderEl.classList.remove('anim-next');
-            resolve();
-          }, animDurationMs);
-        });
-      }
-
-      function stepToPrev() {
-        sliderEl.classList.remove('anim-next');
-        sliderEl.classList.add('anim-prev');
-
-        return new Promise(resolve => {
-          setTimeout(() => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            setSlotImages();
-            updateDotsActive();
-            sliderEl.classList.remove('anim-prev');
-            resolve();
-          }, animDurationMs);
-        });
-      }
-
-      async function goToIndex(targetIndex) {
-        if (animating) return;
-        if (slides.length <= 1) return;
-        if (targetIndex === currentIndex) return;
-
-        const n = slides.length;
-        // Forward distance from current -> target.
-        const distNext = (targetIndex - currentIndex + n) % n;
-        // Backward distance from current -> target.
-        const distPrev = (currentIndex - targetIndex + n) % n;
-
-        animating = true;
-        if (distNext <= distPrev) {
-          for (let i = 0; i < distNext; i++) {
-            await stepToNext();
-          }
-        } else {
-          for (let i = 0; i < distPrev; i++) {
-            await stepToPrev();
-          }
-        }
-        animating = false;
-      }
-
-      // Initial render
-      setSlotImages();
-      renderDots();
-    })();
-
-    // Instagram card controls (index1)
-    (function initInstagramVideoControls() {
-      const cards = document.querySelectorAll('.instagram-strip--centered .ig-card');
-      if (!cards.length) return;
-
-      const items = [];
-
-      function setPlayIcon(button, isPlaying) {
-        button.innerHTML = isPlaying ? '<i data-lucide="pause"></i>' : '<i data-lucide="play"></i>';
-      }
-
-      cards.forEach(card => {
-        const video = card.querySelector('video');
-        const playBtn = card.querySelector('.ig-play-toggle');
-        const muteBtn = card.querySelector('.ig-mute-toggle');
-        if (!video || !playBtn || !muteBtn) return;
-
-        video.muted = true;
-        video.currentTime = 0;
-        setPlayIcon(playBtn, false);
-        muteBtn.innerHTML = '<i data-lucide="volume-x"></i>';
-
-        items.push({ video, playBtn, muteBtn });
-      });
-
-      if (!items.length) return;
-
-      let currentIdx = 0;
-      let autoAdvance = true;
-
-      function syncPlayIcons() {
-        items.forEach((item, idx) => setPlayIcon(item.playBtn, idx === currentIdx && !item.video.paused));
-        lucide.createIcons();
-      }
-
-      function playOnly(index) {
-        items.forEach((item, idx) => {
-          if (idx === index) {
-            item.video.play().catch(() => {});
-          } else {
-            item.video.pause();
-            item.video.currentTime = 0;
-          }
-        });
-        currentIdx = index;
-        syncPlayIcons();
-      }
-
-      function playNextInSequence() {
-        if (!autoAdvance) return;
-        const nextIdx = (currentIdx + 1) % items.length;
-        playOnly(nextIdx);
-      }
-
-      items.forEach((item, idx) => {
-        item.video.addEventListener('ended', () => {
-          if (idx === currentIdx) playNextInSequence();
-        });
-
-        item.playBtn.addEventListener('click', event => {
-          event.preventDefault();
-          event.stopPropagation();
-
-          if (idx !== currentIdx) {
-            autoAdvance = true;
-            playOnly(idx);
-            return;
-          }
-
-          if (item.video.paused) {
-            autoAdvance = true;
-            item.video.play().catch(() => {});
-          } else {
-            autoAdvance = false;
-            item.video.pause();
-          }
-          syncPlayIcons();
-        });
-
-        item.muteBtn.addEventListener('click', event => {
-          event.preventDefault();
-          event.stopPropagation();
-          item.video.muted = !item.video.muted;
-          item.muteBtn.innerHTML = item.video.muted ? '<i data-lucide="volume-x"></i>' : '<i data-lucide="volume-2"></i>';
-          lucide.createIcons();
-        });
-      });
-
-      playOnly(0);
-    })();
-
-    const searchOverlay = document.getElementById('search-overlay');
-    const closeSearch = document.getElementById('close-search');
-    const searchInput = document.getElementById('search-input');
-  </script>
 </body>
 
 </html>

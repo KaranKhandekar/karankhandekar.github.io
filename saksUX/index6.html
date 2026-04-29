@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saks Fifth Avenue | UX Option 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="close-search" id="close-search"><i data-lucide="x"></i></div>
+    <div class="search-container">
+      <input type="text" class="search-input" id="search-input" placeholder="Search Designer, Category, or Trend">
+      <div class="search-suggestions">
+        <div class="suggestion-group">
+          <h4>Trending Searches</h4>
+          <ul>
+            <li><a href="#">Bottega Veneta Sandals</a></li>
+            <li><a href="#">Prada Work Bags</a></li>
+            <li><a href="#">Linen Summer Dresses</a></li>
+            <li><a href="#">Saint Laurent Sunglasses</a></li>
+          </ul>
+        </div>
+        <div class="suggestion-group">
+          <h4>Suggested Categories</h4>
+          <ul>
+            <li><a href="#">New Season Arrivals</a></li>
+            <li><a href="#">Wedding Guest Shop</a></li>
+            <li><a href="#">Designer Sale</a></li>
+            <li><a href="#">Sustainability at Saks</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global PromoBar -->
+  <header class="utility-bar">
+    <div class="container">
+      <div class="utility-left"></div>
+      <div class="promo-scroller">
+        <div class="scroller-arrow"><i data-lucide="chevron-left"></i></div>
+        <div class="scroller-text">
+          Sign Up for Saks Text Alerts and Get 10% Off Your Next Purchase | <strong>Text HELLOSAKS to 75283</strong>
+        </div>
+        <div class="scroller-arrow"><i data-lucide="chevron-right"></i></div>
+      </div>
+      <div class="utility-links">
+        <a href="#">Your Orders</a>
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-grid">
+      <div class="header-left">
+        <a href="#" class="header-toggle active">WOMEN</a>
+        <a href="#" class="header-toggle">MEN</a>
+      </div>
+
+      <a href="index.html" class="logo">
+        <img src="assets/Saks_Fifth_Avenue_Logo_2.png" alt="Saks Fifth Avenue">
+      </a>
+
+      <div class="header-right">
+        <div class="search-bar-inline">
+          <i data-lucide="search"></i>
+          <input type="text" placeholder="Search">
+        </div>
+        <div class="header-actions">
+          <div class="action-icon wishlist-icon">
+            <i data-lucide="heart"></i>
+          </div>
+          <div class="action-icon cart-icon">
+            <i data-lucide="shopping-bag"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="#" class="nav-link red-link">FRIENDS &amp; FAMILY</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">DESIGNERS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">NEW</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">CLOTHING</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">DRESSES</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">SHOES</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="menu-column">
+                <h3>Shop By Category</h3>
+                <ul>
+                  <li><a href="#">Heels</a></li>
+                  <li><a href="#">Boots</a></li>
+                  <li><a href="#">Sneakers</a></li>
+                  <li><a href="#">Sandals</a></li>
+                  <li><a href="#">Flats</a></li>
+                  <li><a href="#">Loafers &amp; Mules</a></li>
+                  <li><a href="#">Slippers</a></li>
+                  <li><a href="#">Platform Shoes</a></li>
+                </ul>
+              </div>
+              <div class="menu-column">
+                <h3>Luxury Designers</h3>
+                <ul>
+                  <li><a href="#">Saint Laurent</a></li>
+                  <li><a href="#">Gucci</a></li>
+                  <li><a href="#">Prada</a></li>
+                  <li><a href="#">Valentino Garavani</a></li>
+                  <li><a href="#">Christian Louboutin</a></li>
+                  <li><a href="#">Manolo Blahnik</a></li>
+                  <li><a href="#">Jimmy Choo</a></li>
+                  <li><a href="#">Balenciaga</a></li>
+                </ul>
+              </div>
+              <div class="menu-column">
+                <h3>The Shoe Edit</h3>
+                <ul>
+                  <li><a href="#">New Arrivals</a></li>
+                  <li><a href="#">Best Sellers</a></li>
+                  <li><a href="#">The Wedding Shop</a></li>
+                  <li><a href="#">Evening Shoes</a></li>
+                  <li><a href="#">Statement Sneakers</a></li>
+                  <li><a href="#">Travel Ready</a></li>
+                </ul>
+              </div>
+              <div class="menu-promo">
+                <div class="promo-image">
+                  <img src="assets/shoe_collection_promo.png" alt="The Boot Edit">
+                </div>
+                <div class="promo-text">The Boot Edit</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">BAGS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">JEWELRY</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">ACCESSORIES</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">BEAUTY</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">KIDS</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">SALE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-frame">
+        <div class="hero-image">
+          <img src="assets/heroBanner/HeroMDGG.png" alt="Saks hero banner">
+          <div class="hero-dots" aria-label="Hero banner navigation">
+            <button type="button" class="hero-dot active" aria-label="Slide 1"></button>
+            <button type="button" class="hero-dot" aria-label="Slide 2"></button>
+            <button type="button" class="hero-dot" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recommended-section" aria-label="Recommended Designers Slider">
+      <h1 class="recommended-title">YOUR RECOMMENDED DESIGNERS</h1>
+
+      <div class="recommended-slider" id="recommended-slider" aria-live="polite">
+        <div class="recommended-viewport">
+          <div class="recommended-card recommended-card--far-left" data-slot="far-left">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--left" data-slot="left">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--active" data-slot="active">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--right" data-slot="right">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+          <div class="recommended-card recommended-card--far-right" data-slot="far-right">
+            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
+          </div>
+        </div>
+
+        <div class="recommended-dots" id="recommended-dots" role="tablist" aria-label="Recommended designers"></div>
+
+        <div class="recommended-designer" id="recommended-designer-name"></div>
+      </div>
+    </section>
+
+    <section class="branding-module">
+      <div class="branding-track">
+        <div class="branding-card">
+          <img src="assets/option1/BM_1.png" alt="The Latest Party Statements">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_2.png" alt="The Latest Party Statements">          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_3.png" alt="The Latest Party Statements">          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_4.png" alt="The Latest Party Statements">          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+        <div class="branding-card">
+          <img src="assets/option1/BM_5.png" alt="The Latest Party Statements">
+          <div class="card-overlay">
+            <div class="card-text">
+              <span class="card-label"></span>
+              <h2 class="card-title"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories-module">
+      <div class="module-header">
+        <div class="module-header-left">
+          <div class="module-title" contenteditable="true" spellcheck="false">Categories to Explore</div>
+          <div class="module-subtitle" contenteditable="true" spellcheck="false">Based On What Customers Are Shopping</div>
+        </div>
+        <div class="nav-arrows">
+          <button class="nav-btn" id="prevBtn" onclick="slide(-1)" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="nav-btn" id="nextBtn" onclick="slide(1)" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    
+      <div class="scroll-wrapper" id="scrollWrapper">
+        <div class="scroll-track" id="scrollTrack">
+    
+          <!-- Card 0 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/0.png" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">👠</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false"></div>
+          </div>
+          
+          <!-- Card 1 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/1.webp" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">👠</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Dresses</div>
+          </div>
+    
+          <!-- Card 2 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/2.webp" alt="Evening Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">👡</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Girls' Tops</div>
+          </div>
+    
+          <!-- Card 3 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/3.webp" alt="Clutches & Pouches" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">👜</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Flats</div>
+          </div>
+    
+          <!-- Card 4 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/4.webp" alt="Bedding Essentials" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">🛏️</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">venings shoes</div>
+          </div>
+    
+          <!-- Card 5 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/5.webp" alt="Fragrances" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">🧴</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Clutches & Pouches</div>
+          </div>
+    
+          <!-- Card 6 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/6.webp" alt="Tops" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">👗</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Bedding Essentials</div>
+          </div>
+    
+          <!-- Card 7 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/7.webp" alt="Handbags" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">👝</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Fragrances</div>
+          </div>
+    
+          <!-- Card 8 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/8.webp" alt="Jewelry" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">💍</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Top</div>
+          </div>
+    
+          <!-- Card 9 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/9.webp" alt="Sunglasses" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">🕶️</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Sunglasses</div>
+          </div>
+    
+          <!-- Card 10 -->
+          <div class="category-card">
+            <div class="category-img-wrap">
+              <img src="assets/CategoriesToExplore/10.webp" alt="Scarves" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="placeholder-img" style="display:none">🧣</div>
+            </div>
+            <div class="category-label" contenteditable="true" spellcheck="false">Scarves</div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="instagram-strip instagram-strip--centered" aria-label="Instagram videos">
+      <div class="instagram-strip-header">
+        <h2>See It. Love It. Own It.</h2>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">View More</a>
+      </div>
+
+      <div class="instagram-scroll instagram-scroll--centered">
+        
+        <div class="ig-card ig-card--compact">
+          <div class="ig-media">
+            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
+              <video muted playsinline preload="metadata">
+                <source src="assets/insta_video/IG1.mp4" type="video/mp4">
+              </video>
+            </a>
+            <div class="ig-video-controls">
+              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
+                <i data-lucide="pause"></i>
+              </button>
+              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
+                <i data-lucide="volume-x"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ig-copy">
+            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
+            <span>Discover</span>
+          </div>
+        </div>
+
+        <div class="ig-card ig-card--compact">
+          <div class="ig-media">
+            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
+              <video muted playsinline preload="metadata">
+                <source src="assets/insta_video/IG2.mp4" type="video/mp4">
+              </video>
+            </a>
+            <div class="ig-video-controls">
+              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
+                <i data-lucide="pause"></i>
+              </button>
+              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
+                <i data-lucide="volume-x"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ig-copy">
+            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
+            <span>Discover</span>
+          </div>
+        </div>
+
+        <div class="ig-card ig-card--compact">
+          <div class="ig-media">
+            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
+              <video muted playsinline preload="metadata">
+                <source src="assets/insta_video/IG3.mp4" type="video/mp4">
+              </video>
+            </a>
+            <div class="ig-video-controls">
+              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
+                <i data-lucide="pause"></i>
+              </button>
+              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
+                <i data-lucide="volume-x"></i>
+              </button>
+            </div>
+          </div>
+          <div class="ig-copy">
+            <h3>Between takes of our spring campaign with @lilamoss.</h3>
+            <span>Explore</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script>
+    const track = document.getElementById('scrollTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const CARD_WIDTH = 220 + 16; // width + gap
+    let currentIndex = 0;
+  
+    function getVisibleCount() {
+      const wrapperWidth = document.getElementById('scrollWrapper').offsetWidth;
+      return Math.floor(wrapperWidth / CARD_WIDTH);
+    }
+  
+    function getTotalCards() {
+      return track.querySelectorAll('.category-card').length;
+    }
+  
+    function slide(direction) {
+      const total = getTotalCards();
+      const visible = getVisibleCount();
+      const maxIndex = total - visible;
+  
+      currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+      track.style.transform = `translateX(-${currentIndex * CARD_WIDTH}px)`;
+      updateButtons();
+    }
+  
+    function updateButtons() {
+      const total = getTotalCards();
+      const visible = getVisibleCount();
+      const maxIndex = total - visible;
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex >= maxIndex;
+    }
+  
+    updateButtons();
+    window.addEventListener('resize', () => {
+      slide(0);
+      updateButtons();
+    });
+  
+    document.getElementById('scrollWrapper').addEventListener('wheel', (e) => {
+      e.preventDefault();
+      if (e.deltaY > 0 || e.deltaX > 0) slide(1);
+      else slide(-1);
+    }, { passive: false });
+  </script>
+
+  <script>
+    lucide.createIcons({
+      attrs: { 'stroke-width': 1.25 }
+    });
+
+    const heroVideo = document.getElementById('hero-video');
+    const heroBackupImg = document.getElementById('hero-backup-img');
+    const heroVideoControls = document.getElementById('hero-video-controls');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const muteUnmuteBtn = document.getElementById('mute-unmute-btn');
+
+    if (heroVideo) {
+      heroVideo.muted = true;
+      heroVideo.addEventListener('canplaythrough', () => {
+        heroVideo.classList.add('ready');
+        heroBackupImg.classList.add('fade-out');
+        heroVideoControls.classList.add('visible');
+        heroVideo.play().catch(console.error);
+      });
+
+      playPauseBtn.addEventListener('click', () => {
+        if (heroVideo.paused) {
+          heroVideo.play();
+          playPauseBtn.innerHTML = '<i data-lucide="pause"></i>';
+        } else {
+          heroVideo.pause();
+          playPauseBtn.innerHTML = '<i data-lucide="play"></i>';
+        }
+        lucide.createIcons();
+      });
+
+      muteUnmuteBtn.addEventListener('click', () => {
+        heroVideo.muted = !heroVideo.muted;
+        muteUnmuteBtn.innerHTML = heroVideo.muted ? '<i data-lucide="volume-x"></i>' : '<i data-lucide="volume-2"></i>';
+        lucide.createIcons();
+      });
+    }
+
+    // Recommended Designers Slider (3 overlapping cards)
+    (function initRecommendedSlider() {
+      const sliderEl = document.getElementById('recommended-slider');
+      if (!sliderEl) return;
+
+      const designerNameEl = document.getElementById('recommended-designer-name');
+      const dotsEl = document.getElementById('recommended-dots');
+
+      const farLeftCard = sliderEl.querySelector('.recommended-card--far-left');
+      const leftCard = sliderEl.querySelector('.recommended-card--left');
+      const activeCard = sliderEl.querySelector('.recommended-card--active');
+      const rightCard = sliderEl.querySelector('.recommended-card--right');
+      const farRightCard = sliderEl.querySelector('.recommended-card--far-right');
+
+      // Replace these with your CDN image links (and optionally update the names).
+      const slides = [
+        { name: 'Ulla Johnson', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/de1c048b-1475-4a4c-b08c-59b154d66a88?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 2', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/da67b711-da48-4706-b175-e3a22978c9a7?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 3', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/ac00c421-5661-4a0c-bff0-1eeb9ca3c29a?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 4', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/28f8b570-7706-4ba9-bb2e-078e89066114?wid=768&hei=960&fmt=webp' },
+        { name: 'Designer 5', img: 'https://cdn.saksfifthavenue.com/is/p13n/saks/cc7a4122-cc44-470a-9981-b97efcf9ff04?wid=768&hei=960&fmt=webp' },
+      ];
+
+      let currentIndex = 0;
+      let animating = false;
+      const animDurationMs = 520;
+
+      function setSlotImages() {
+        const n = slides.length;
+        const farLeftIndex = (currentIndex - 2 + n) % n;
+        const leftIndex = (currentIndex - 1 + n) % n;
+        const rightIndex = (currentIndex + 1) % n;
+        const farRightIndex = (currentIndex + 2) % n;
+
+        const farLeftImg = farLeftCard.querySelector('img.recommended-img');
+        const leftImg = leftCard.querySelector('img.recommended-img');
+        const activeImg = activeCard.querySelector('img.recommended-img');
+        const rightImg = rightCard.querySelector('img.recommended-img');
+        const farRightImg = farRightCard.querySelector('img.recommended-img');
+
+        farLeftImg.src = slides[farLeftIndex].img;
+        farLeftImg.alt = slides[farLeftIndex].name;
+        leftImg.src = slides[leftIndex].img;
+        leftImg.alt = slides[leftIndex].name;
+        activeImg.src = slides[currentIndex].img;
+        activeImg.alt = slides[currentIndex].name;
+        rightImg.src = slides[rightIndex].img;
+        rightImg.alt = slides[rightIndex].name;
+        farRightImg.src = slides[farRightIndex].img;
+        farRightImg.alt = slides[farRightIndex].name;
+
+        designerNameEl.textContent = slides[currentIndex].name;
+      }
+
+      function renderDots() {
+        dotsEl.innerHTML = '';
+        slides.forEach((s, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'recommended-dot' + (idx === currentIndex ? ' active' : '');
+          btn.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+          btn.setAttribute('role', 'tab');
+          btn.dataset.targetIndex = String(idx);
+          btn.addEventListener('click', () => {
+            const target = Number(btn.dataset.targetIndex);
+            goToIndex(target);
+          });
+          dotsEl.appendChild(btn);
+        });
+      }
+
+      function updateDotsActive() {
+        const n = dotsEl.children.length;
+        for (let i = 0; i < n; i++) {
+          const child = dotsEl.children[i];
+          if (Number(child.dataset.targetIndex) === currentIndex) child.classList.add('active');
+          else child.classList.remove('active');
+        }
+      }
+
+      function stepToNext() {
+        sliderEl.classList.remove('anim-prev');
+        sliderEl.classList.add('anim-next');
+
+        return new Promise(resolve => {
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            setSlotImages();
+            updateDotsActive();
+            sliderEl.classList.remove('anim-next');
+            resolve();
+          }, animDurationMs);
+        });
+      }
+
+      function stepToPrev() {
+        sliderEl.classList.remove('anim-next');
+        sliderEl.classList.add('anim-prev');
+
+        return new Promise(resolve => {
+          setTimeout(() => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            setSlotImages();
+            updateDotsActive();
+            sliderEl.classList.remove('anim-prev');
+            resolve();
+          }, animDurationMs);
+        });
+      }
+
+      async function goToIndex(targetIndex) {
+        if (animating) return;
+        if (slides.length <= 1) return;
+        if (targetIndex === currentIndex) return;
+
+        const n = slides.length;
+        // Forward distance from current -> target.
+        const distNext = (targetIndex - currentIndex + n) % n;
+        // Backward distance from current -> target.
+        const distPrev = (currentIndex - targetIndex + n) % n;
+
+        animating = true;
+        if (distNext <= distPrev) {
+          for (let i = 0; i < distNext; i++) {
+            await stepToNext();
+          }
+        } else {
+          for (let i = 0; i < distPrev; i++) {
+            await stepToPrev();
+          }
+        }
+        animating = false;
+      }
+
+      // Initial render
+      setSlotImages();
+      renderDots();
+    })();
+
+    // Instagram card controls (index1)
+    (function initInstagramVideoControls() {
+      const cards = document.querySelectorAll('.instagram-strip--centered .ig-card');
+      if (!cards.length) return;
+
+      const items = [];
+
+      function setPlayIcon(button, isPlaying) {
+        button.innerHTML = isPlaying ? '<i data-lucide="pause"></i>' : '<i data-lucide="play"></i>';
+      }
+
+      cards.forEach(card => {
+        const video = card.querySelector('video');
+        const playBtn = card.querySelector('.ig-play-toggle');
+        const muteBtn = card.querySelector('.ig-mute-toggle');
+        if (!video || !playBtn || !muteBtn) return;
+
+        video.muted = true;
+        video.currentTime = 0;
+        setPlayIcon(playBtn, false);
+        muteBtn.innerHTML = '<i data-lucide="volume-x"></i>';
+
+        items.push({ video, playBtn, muteBtn });
+      });
+
+      if (!items.length) return;
+
+      let currentIdx = 0;
+      let autoAdvance = true;
+
+      function syncPlayIcons() {
+        items.forEach((item, idx) => setPlayIcon(item.playBtn, idx === currentIdx && !item.video.paused));
+        lucide.createIcons();
+      }
+
+      function playOnly(index) {
+        items.forEach((item, idx) => {
+          if (idx === index) {
+            item.video.play().catch(() => {});
+          } else {
+            item.video.pause();
+            item.video.currentTime = 0;
+          }
+        });
+        currentIdx = index;
+        syncPlayIcons();
+      }
+
+      function playNextInSequence() {
+        if (!autoAdvance) return;
+        const nextIdx = (currentIdx + 1) % items.length;
+        playOnly(nextIdx);
+      }
+
+      items.forEach((item, idx) => {
+        item.video.addEventListener('ended', () => {
+          if (idx === currentIdx) playNextInSequence();
+        });
+
+        item.playBtn.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (idx !== currentIdx) {
+            autoAdvance = true;
+            playOnly(idx);
+            return;
+          }
+
+          if (item.video.paused) {
+            autoAdvance = true;
+            item.video.play().catch(() => {});
+          } else {
+            autoAdvance = false;
+            item.video.pause();
+          }
+          syncPlayIcons();
+        });
+
+        item.muteBtn.addEventListener('click', event => {
+          event.preventDefault();
+          event.stopPropagation();
+          item.video.muted = !item.video.muted;
+          item.muteBtn.innerHTML = item.video.muted ? '<i data-lucide="volume-x"></i>' : '<i data-lucide="volume-2"></i>';
+          lucide.createIcons();
+        });
+      });
+
+      playOnly(0);
+    })();
+
+    const searchOverlay = document.getElementById('search-overlay');
+    const closeSearch = document.getElementById('close-search');
+    const searchInput = document.getElementById('search-input');
+  </script>
+</body>
+
+</html>

@@ -56,10 +56,18 @@
         }
 
         .design-list {
-            display: flex;
-            flex-direction: column;
+             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            align-items: center;
+            justify-items: center;
+            width: 100%;
+        }
+
+        /* Optional: tweak for smaller screens */
+        @media (max-width: 600px) {
+            .design-list {
+            grid-template-columns: 1fr;
+            }
         }
 
         .design-link {
@@ -150,6 +158,10 @@
             <a href="index5.html" class="design-link">
                 <span class="design-num">05</span>
                 <span class="design-name">Design 5</span>
+            </a>
+            <a href="index6.html" class="design-link">
+                <span class="design-num">06</span>
+                <span class="design-name">Design 6</span>
             </a>
         </nav>
 

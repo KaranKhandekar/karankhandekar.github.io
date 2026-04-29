@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Chonburi&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Chonburi&display=swap');
 :root {
   /* Colors */
   --color-primary: #000000;
@@ -11,7 +11,8 @@
 
   /* Typography */
   --font-serif: "Noto Serif", serif;
-  --font-sans: "Roboto Condensed", sans-serif;
+  /* Switched to Barlow Condensed which is already imported from Google Fonts */
+  --font-sans: "Barlow Condensed", "Roboto Condensed", sans-serif;
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -1791,56 +1792,66 @@ ul {
 
 /* ─── Product Grid ───────────────────────────────────────────── */
 .product-grid-section {
-  max-width: var(--max-width);
-  margin: 80px auto;
-  padding: 0 var(--spacing-md);
+  width: 100vw;           /* Spans entire browser width */
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;     /* Centers the full-width section */
+  margin-top: 60px;
+  margin-bottom: 80px;
+  overflow: hidden;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(5, 1fr); /* Exactly 5 items side-by-side */
+  gap: 16px;              /* Standard gap between items */
+  padding: 0 20px;        /* Minimal side padding for luxury breathing room */
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  background: transparent;
   cursor: pointer;
 }
 
 .product-img-wrap {
   width: 100%;
-  aspect-ratio: 1 / 1;       /* square cards as in screenshot */
-  background: #f9f9f9;
+  aspect-ratio: 4 / 5;    /* Square frames as shown in screenshot */
+  background: #fafafa;    /* Light gray background color from screenshot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
 .product-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;        /* product on white bg — no cropping */
-  display: block;
-  transition: transform 0.5s ease;
+  width: 85%;             /* Shrinks product inside the box for the clean centered look */
+  height: 85%;
+  object-fit: contain;    /* Product remains fully visible and centered */
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.product-card:hover .product-img-wrap img {
-  transform: scale(1.04);
+.product-card:hover img {
+  transform: scale(1.05); /* Subtle zoom for high-end interactivity */
 }
 
 .product-placeholder {
   display: none;
   width: 100%;
   height: 100%;
-  background: #f9f9f9;
+  background: #fafafa;
 }
 
 .product-name {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  letter-spacing: 0.03em;
-  color: var(--color-primary);
+  font-family: "Barlow Condensed", sans-serif; /* Condensed font from your imports */
+  font-size: 16px;
+  font-weight: 300;             /* Heavy bold for the Image 1 look */
+  text-transform: uppercase;    /* All caps as per your screenshot */
   text-align: center;
+  color: #000;
+  margin-top: 18px;             /* Vertical space between image and text */
+  letter-spacing: 0.02em;
 }
 
 /* Responsive */
@@ -1850,4 +1861,350 @@ ul {
 
 @media (max-width: 480px) {
   .product-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}
+
+/* --- NEW ARRIVALS: REFINED LAYOUT --- */
+.arrivals-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.arrivals-header {
+  padding: 0 20px;
+  margin-bottom: 24px;
+  display: flex;                /* Pushes content to opposite ends */
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.arrivals-header-text {
+  display: flex;
+  flex-direction: column;       /* Stacks Title and Subtitle */
+}
+
+/* FORCES ARROWS SIDE-BY-SIDE */
+.arrivals-nav {
+  display: flex;
+  gap: 10px;                    /* Space between the two circles */
+  margin-bottom: 5px;
+}
+
+.arrivals-title {
+  font-family: var(--font-sans);
+  font-size: 28px;
+  /* Reduced from 900 to 700 for a cleaner look */
+  font-weight: 700;             
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.arrivals-sub {
+  font-family: var(--font-sans);
+  font-size: 22px;
+  color: #767676;
+  margin-top: 4px;
+}
+
+.arrivals-track {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.arrivals-card {
+  flex: 0 0 calc((100vw - 40px - (5 * 12px)) / 6);
+  display: flex;
+  flex-direction: column;
+  background: #f5f3f0;
+  cursor: pointer;
+}
+
+.arrivals-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+}
+
+.arrivals-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CIRCULAR ARROW STYLES */
+.arrivals-arrow {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.arrivals-arrow:hover {
+  background: #eeeeee;
+}
+
+.arrivals-arrow i {
+  width: 16px;
+  height: 16px;
+}
+
+/* PRODUCT INFO WITH LEFT MARGIN */
+.arrivals-info {
+  padding: 12px 20px;          /* 20px left margin as requested */
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arrivals-brand {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  /* Reduced weight to 700 to match the title's refinement */
+  font-weight: 600;             
+  /* text-transform: uppercase; */
+  color: #000;
+}
+
+.arrivals-name {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #666;
+}
+
+.arrivals-price {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  /* Keeps price visible but matches the thinner brand weight */
+  font-weight: 700;             
+  margin-top: 4px;
+  color: #000;
+}
+
+.arrivals-wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/* --- CURRENT SALES & OFFERS --- */
+.offers-section {
+  background-color: #f8f9fa; /* Light gray background from screenshot */
+  padding: 60px var(--spacing-md);
+  text-align: center;
+}
+
+.offers-title {
+  font-family: var(--font-sans); /* Barlow Condensed */
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.offers-grid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.offer-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 8px; /* Slightly rounded for the premium look */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle depth */
+}
+
+.offer-image-wrap {
+  width: 100%;
+  /* Matches the visual proportion of your provided screenshot */
+  aspect-ratio: 16 / 10; 
+  overflow: hidden;
+  background: #f0f0f0; /* Fallback background color */
+}
+
+.offer-image-wrap img {
+  width: 100%;
+  height: 100%;
+  /* 'cover' ensures the image fills the box without gaps */
+  /* If your images have text that shouldn't be cropped, use 'contain' */
+  object-fit: cover; 
+  display: block;      /* Removes extra whitespace at the bottom */
+}
+
+/* Background fallbacks for your blue/green images */
+.offer-blue { background-color: #1a428a; }
+.offer-green { background-color: #2d5a27; }
+
+.offer-info {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.offer-heading {
+  font-family: var(--font-sans);
+  text-align: left;
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 1.4;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.offer-link {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: #000;
+  display: inline-block;
+  width: fit-content;
+}
+
+.offer-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.offer-details {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0.7;
+}
+
+.offer-details i {
+  width: 12px;
+  height: 12px;
+}
+
+/* --- CATEGORIES TO EXPLORE --- */
+.categories-explore-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+
+.categories-header {
+  padding: 0 20px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.categories-title {
+  font-family: var(--font-sans); /* Barlow Condensed */
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.categories-sub {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #767676;
+  margin-top: 4px;
+}
+
+.categories-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.categories-arrow {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.categories-track-wrap {
+  padding: 0 20px;
+}
+
+.categories-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.category-explore-card {
+  /* Logic: (100vw - 40px padding - 5 gaps) / 6 visible cards */
+  flex: 0 0 calc((100vw - 40px - (5 * 16px)) / 6);
+  display: flex;
+  flex-direction: column;
+}
+
+.category-explore-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;   /* Requested 4:5 ratio */
+  border-radius: 12px;   /* Rounded corners as requested */
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.category-explore-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-explore-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-explore-label {
+  margin-top: 14px;
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 400;      /* Clean regular weight from your design */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #666;
 }
