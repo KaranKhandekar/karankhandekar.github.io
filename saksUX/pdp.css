@@ -1,0 +1,165 @@
+/* --- PDP LAYOUT --- */
+.pdp-main {
+    background: #fff;
+    padding-top: 20px;
+  }
+  
+  .pdp-container {
+    display: grid;
+    /* 3 Columns: Sticky Image | Scrolling Images | Sticky Info */
+    grid-template-columns: 1fr 1fr 400px;
+    gap: 20px;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: start;
+  }
+  
+  /* Common Image Placeholder Styles */
+  .pdp-image-placeholder {
+    width: 100%;
+    aspect-ratio: 2 / 3;      /* Standard luxury portrait ratio */
+    background: #f4f4f4;      /* Light grey background from your design */
+    overflow: hidden;
+    display: flex;            /* Enables centering logic */
+    align-items: center;      /* Centers image vertically */
+    justify-content: center;   /* Centers image horizontally */
+  }
+
+  .pdp-image-placeholder img {
+    width: 100%;              /* Forces width to container */
+    height: 100%;             /* Forces height to container */
+    /* 'cover' fills the box entirely (may crop edges) */
+    /* 'contain' fits the whole image inside the box (no cropping) */
+    object-fit: cover;        
+    object-position: center;  /* Pins the focus to the center of the photo */
+    display: block;
+  }
+  
+  /* Sticky Left Column */
+  .pdp-sticky-column {
+    position: sticky;
+    top: 140px; /* Adjust based on your header height */
+  }
+  
+  /* Sticky Right Info Column */
+  .pdp-info-column {
+    position: sticky;
+    top: 140px;
+    padding-left: 20px;
+  }
+  
+  /* --- TYPOGRAPHY & BUTTONS --- */
+  .pdp-breadcrumbs {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: #666;
+    text-transform: none; /* Removed all-caps to match design */
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pdp-breadcrumbs i {
+    width: 12px;
+    height: 12px;
+  }
+
+  .pdp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .pdp-brand {
+    /* Using Serif for the Brand Name as per Design 1 */
+  font-family: "Bodoni Moda", var(--font-serif); 
+  font-size: 48px; 
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  }
+  
+  .pdp-add-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 16px;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: 24px 0;
+    cursor: pointer;
+  }
+  
+  .pdp-size-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    font-family: var(--font-sans);
+    margin-top: 8px;
+  }
+  
+  .pdp-details-section h4 {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 32px 0 16px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 16px;
+  }
+
+  /* CIRCULAR WISHLIST BUTTON */
+.pdp-wishlist-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f8f9fa; /* Soft grey circle background */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .pdp-wishlist-btn:hover {
+    background: #f0f0f0;
+  }
+  
+  .pdp-wishlist-btn i {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
+  }
+  
+  .pdp-product-name {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: none;
+  }
+  
+  .pdp-price {
+    font-family: var(--font-sans);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #000;
+  }
+  
+  .pdp-installments {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .pdp-installments a {
+    text-decoration: underline;
+    font-weight: 500;
+  }

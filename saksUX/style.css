@@ -2282,3 +2282,44 @@ ul {
   /* Removes any baseline gaps */
   vertical-align: middle; 
 }
+
+/* --- GLOBAL STICKY HEADER --- */
+
+.utility-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1100; /* High z-index to stay above everything */
+  background: #f5f5f5;
+  width: 100%;
+}
+
+.main-header {
+  position: sticky;
+  top: 50px; /* Sits below the 50px Utility Bar */
+  z-index: 1090;
+  background: #ffffff;
+  width: 100%;
+}
+
+.nav-bar {
+  position: sticky;
+  top: 118px; /* Utility Bar (50px) + Main Header (approx 68px) */
+  z-index: 1080;
+  background: #ffffff;
+  width: 100%;
+}
+
+/* Ensure Search Overlay is above the sticky header */
+.search-overlay {
+  z-index: 2000;
+}
+
+/* Target your specific link class, like .offer-link or .promo-link */
+.margine-space {
+     /* This is the magic line */
+  margin-top: 20px;         /* Adds space above */
+  margin-bottom: 20px;      /* Adds space below */
+  
+  /* Or use your project's variables */
+  margin: var(--spacing-md) 0; 
+}
