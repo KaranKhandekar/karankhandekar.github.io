@@ -19,7 +19,7 @@
   /* --- COLUMN 1: STICKY LEFT IMAGE --- */
   .pdp-sticky-column {
     position: sticky;
-    top: 163px; /* Aligns exactly with your sticky navbar */
+    top: 1px; /* Aligns exactly with your sticky navbar */
     align-self: start;
     z-index: 10;
     height: calc(100vh - 163px);
@@ -61,7 +61,7 @@
   /* --- COLUMN 3: STICKY INFO SECTION --- */
   .pdp-info-column {
     position: sticky;
-    top: 163px; /* Aligns exactly with gallery top */
+    top: 1px; /* Aligns exactly with gallery top */
     padding-left: 20px;
     padding-top: 0; /* REMOVED TOP SPACE FOR TEXT SECTION */
   }
