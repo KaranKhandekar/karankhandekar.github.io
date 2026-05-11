@@ -160,8 +160,8 @@
   <main>
     <section class="hero">
       <div class="hero-frame">
-        <div class="hero-image">
-          <img src="https://cdn.saksfifthavenue.com/is/image/saks/040726_MHP_HERO_EVENING_01?scl=1&qlt=85&wid=2000&hei=806" alt="Saks hero banner">
+        <div class="hero-image-full-b">
+          <img src="assets/option6/HeroBanner.png" alt="Saks hero banner">
           <div class="hero-dots" aria-label="Hero banner navigation">
             <button type="button" class="hero-dot active" aria-label="Slide 1"></button>
             <button type="button" class="hero-dot" aria-label="Slide 2"></button>
@@ -171,238 +171,221 @@
       </div>
     </section>
 
-    <section class="recommended-section" aria-label="Recommended Designers Slider">
-      <h1 class="recommended-title">YOUR RECOMMENDED DESIGNERS</h1>
+    <!-- ─── New In Section ─────────────────────────────────────── -->
+    <section class="new-in-section">
 
-      <div class="recommended-slider" id="recommended-slider" aria-live="polite">
-        <div class="recommended-viewport">
-          <div class="recommended-card recommended-card--far-left" data-slot="far-left">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--left" data-slot="left">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--active" data-slot="active">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--right" data-slot="right">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
-          <div class="recommended-card recommended-card--far-right" data-slot="far-right">
-            <img class="recommended-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-          </div>
+      <div class="new-in-inner">
+
+        <!-- LEFT: Copy -->
+        <div class="new-in-copy">
+          <h2 class="new-in-heading">JUST IN</h2>
+          <p class="new-in-desc">from the brands we love.</p>
+          <a href="#" class="new-in-btn">Shop New Arrivals</a>
         </div>
 
-        <div class="recommended-dots" id="recommended-dots" role="tablist" aria-label="Recommended designers"></div>
+        <!-- RIGHT: Product grid -->
+        <div class="new-in-grid-wrapper">
+          <div class="new-in-grid" id="new-in-grid">
 
-        <div class="recommended-designer" id="recommended-designer-name"></div>
-      </div>
-    </section>
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM1.png" alt="Knit Bag">
+              </div>
+              <span class="nm-brand">Lorem Ipsum</span>
+            </div>
 
-    <section class="categories-module">
-      <div class="module-header">
-        <div class="module-header-left">
-          <div class="module-title" contenteditable="true" spellcheck="false">Categories to Explore</div>
-          <div class="module-subtitle" contenteditable="true" spellcheck="false">Based On What Customers Are Shopping</div>
-        </div>
-        <div class="nav-arrows">
-          <button class="nav-btn" id="prevBtn" onclick="slide(-1)" aria-label="Previous">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM2.png" alt="Blouse">
+              </div>
+              <span class="nm-brand">Lorem Ipsum</span>
+            </div>
+
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM3.png" alt="Sunglasses">
+              </div>
+              <span class="nm-brand">Lorem Ipsum</span>
+            </div>
+
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM4.png" alt="Mule">
+              </div>
+              <span class="nm-brand">Lorem Ipsum</span>
+            </div>
+
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM5.png" alt="Bracelet">
+              </div>
+              <span class="nm-brand">Lorem Ipsum</span>
+            </div>
+
+          </div>
+          <button class="new-in-arrow" id="new-in-next">
+            <i data-lucide="chevron-right"></i>
           </button>
-          <button class="nav-btn" id="nextBtn" onclick="slide(1)" aria-label="Next">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
-        </div>
-      </div>
-    
-      <div class="scroll-wrapper" id="scrollWrapper">
-        <div class="scroll-track" id="scrollTrack">
-    
-          <!-- Card 0 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/0.png" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👠</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false"></div>
-          </div>
-          
-          <!-- Card 1 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/1.webp" alt="Heels" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👠</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Dresses</div>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/2.webp" alt="Evening Shoes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👡</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Girls' Tops</div>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/3.webp" alt="Clutches & Pouches" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👜</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Flats</div>
-          </div>
-    
-          <!-- Card 4 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/4.webp" alt="Bedding Essentials" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🛏️</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">venings shoes</div>
-          </div>
-    
-          <!-- Card 5 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/5.webp" alt="Fragrances" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🧴</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Clutches & Pouches</div>
-          </div>
-    
-          <!-- Card 6 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/6.webp" alt="Tops" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👗</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Bedding Essentials</div>
-          </div>
-    
-          <!-- Card 7 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/7.webp" alt="Handbags" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">👝</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Fragrances</div>
-          </div>
-    
-          <!-- Card 8 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/8.webp" alt="Jewelry" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">💍</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Top</div>
-          </div>
-    
-          <!-- Card 9 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/9.webp" alt="Sunglasses" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🕶️</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Sunglasses</div>
-          </div>
-    
-          <!-- Card 10 -->
-          <div class="category-card">
-            <div class="category-img-wrap">
-              <img src="assets/CategoriesToExplore/10.webp" alt="Scarves" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="placeholder-img" style="display:none">🧣</div>
-            </div>
-            <div class="category-label" contenteditable="true" spellcheck="false">Scarves</div>
-          </div>
-    
         </div>
       </div>
     </section>
 
-    
-
-    <section class="instagram-strip instagram-strip--centered" aria-label="Instagram videos">
-      <div class="instagram-strip-header">
-        <h2>See It. Love It. Own It.</h2>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">View More</a>
+    <!-- ─── Full Bleed Single Banner ─────────────────────────────── -->
+    <section class="full-bleed-banner">
+      <div class="full-bleed-img-wrap">
+        <img src="assets/option6/Hero Module/Mens-banner.png" alt="Full bleed banner"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="full-bleed-placeholder"></div>
       </div>
+    </section>
 
-      <div class="instagram-scroll instagram-scroll--centered">
-        
-        <div class="ig-card ig-card--compact">
-          <div class="ig-media">
-            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
-              <video muted playsinline preload="metadata">
-                <source src="assets/insta_video/IG1.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="ig-video-controls">
-              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
-                <i data-lucide="pause"></i>
-              </button>
-              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
-                <i data-lucide="volume-x"></i>
-              </button>
-            </div>
-          </div>
-          <div class="ig-copy">
-            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
-            <span>Discover</span>
-          </div>
+    <!-- ─── Trending Now Section ─────────────────────────────────────── -->
+    <section class="new-in-section trending-now-section">
+      <div class="new-in-inner">
+        <!-- LEFT: Copy -->
+        <div class="new-in-copy">
+          <h2 class="new-in-heading">TRENDING NOW</h2>
+          <p class="new-in-desc">new trends to look for</p>
+          <a href="#" class="new-in-btn">Shop Now</a>
         </div>
 
-        <div class="ig-card ig-card--compact">
-          <div class="ig-media">
-            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
-              <video muted playsinline preload="metadata">
-                <source src="assets/insta_video/IG2.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="ig-video-controls">
-              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
-                <i data-lucide="pause"></i>
-              </button>
-              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
-                <i data-lucide="volume-x"></i>
-              </button>
-            </div>
-          </div>
-          <div class="ig-copy">
-            <h3>Gate-side style notes with French fashion icon and star of our spring campaign @carlynecerfdedudzeele. 📸 by @ingefonteyne.</h3>
-            <span>Discover</span>
-          </div>
-        </div>
+        <!-- RIGHT: Product grid -->
+        <div class="new-in-grid-wrapper trending-grid-wrapper">
+          <div class="new-in-grid trending-grid">
 
-        <div class="ig-card ig-card--compact">
-          <div class="ig-media">
-            <a class="ig-link" href="https://www.saks.com/" target="_blank" rel="noopener noreferrer" aria-label="Open on Saks">
-              <video muted playsinline preload="metadata">
-                <source src="assets/insta_video/IG3.mp4" type="video/mp4">
-              </video>
-            </a>
-            <div class="ig-video-controls">
-              <button class="ig-control-btn ig-play-toggle" type="button" aria-label="Play/Pause">
-                <i data-lucide="pause"></i>
-              </button>
-              <button class="ig-control-btn ig-mute-toggle" type="button" aria-label="Mute/Unmute">
-                <i data-lucide="volume-x"></i>
-              </button>
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM6.png" alt="Denim Dresses">
+              </div>
             </div>
-          </div>
-          <div class="ig-copy">
-            <h3>Between takes of our spring campaign with @lilamoss.</h3>
-            <span>Explore</span>
+
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM7.png" alt="Thong Sandals">
+              </div>
+            </div>
+
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM8.png" alt="Accessories">
+              </div>
+            </div>
+
+            <div class="nm-card">
+              <div class="nm-img-wrap">
+                <img src="assets/option6/New Module/NM9.png" alt="Raffia Bags">
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ─── Where To Wear Section ────────────────────────────────── -->
+    <section class="wtw-section">
+      <h2 class="wtw-title">WHERE TO WEAR</h2>
+      <div class="wtw-container">
+        <div class="wtw-track">
+          <div class="wtw-card">
+            <div class="wtw-img-wrap">
+              <img src="assets/option6/Branding Module/BM6.png" alt="Airport Outfits">
+            </div>
+            <p class="wtw-label">AIRPORT OUTFITS</p>
+          </div>
+          <div class="wtw-card">
+            <div class="wtw-img-wrap">
+              <img src="assets/option6/Branding Module/BM7.png" alt="Evening">
+            </div>
+            <p class="wtw-label">EVENING</p>
+          </div>
+          <div class="wtw-card">
+            <div class="wtw-img-wrap">
+              <img src="assets/option6/Branding Module/BM8.png" alt="Weekend Updates">
+            </div>
+            <p class="wtw-label">WEEKEND UPDATES</p>
+          </div>
+          <div class="wtw-card">
+            <div class="wtw-img-wrap">
+              <img src="assets/option6/Branding Module/BM9.png" alt="Vacation">
+            </div>
+            <p class="wtw-label">VACATION</p>
+          </div>
+          <div class="wtw-card">
+            <div class="wtw-img-wrap">
+              <img src="assets/option6/Branding Module/BM10.png" alt="Destination">
+            </div>
+            <p class="wtw-label">DESTINATION</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Full Bleed Single Womens Banner ─────────────────────────────── -->
+    <section class="full-bleed-banner">
+      <div class="full-bleed-img-wrap">
+        <img src="assets/option6/Hero Module/Womens-banner.png" alt="Full bleed banner"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="full-bleed-placeholder"></div>
+      </div>
+    </section>
+
+    <!-- ─── The Edit Section ──────────────────────────────────────── -->
+    <section class="the-edit-section">
+      <h2 class="the-edit-main-title">THE EDIT</h2>
+      <div class="the-edit-grid">
+        <div class="the-edit-card">
+          <div class="the-edit-img-wrap">
+            <img src="assets/option6/Branding Module/BM13.png" alt="Francesca Keller Edit">
+          </div>
+          <div class="the-edit-info">
+            <span class="the-edit-small">DJ, actress, in-the-know New Yorker</span>
+            <h3 class="the-edit-title">THE FRANCESCA KELLER EDIT</h3>
+          </div>
+        </div>
+        <div class="the-edit-card">
+          <div class="the-edit-img-wrap">
+            <img src="assets/option6/Branding Module/BM12.png" alt="Evening Edit">
+          </div>
+          <div class="the-edit-info">
+            <span class="the-edit-small">Hit The Town In Signature Statements</span>
+            <h3 class="the-edit-title">EVENING EDIT</h3>
+          </div>
+        </div>
+        <div class="the-edit-card">
+          <div class="the-edit-img-wrap">
+            <img src="assets/option6/Branding Module/BM14.png" alt="The Look of Now">
+          </div>
+          <div class="the-edit-info">
+            <span class="the-edit-small">Editors' Guide to</span>
+            <h3 class="the-edit-title">THE LOOK OF NOW</h3>
+          </div>
+        </div>
+        <div class="the-edit-card">
+          <div class="the-edit-img-wrap">
+            <img src="assets/option6/Branding Module/BM15.png" alt="Runway to Runway">
+          </div>
+          <div class="the-edit-info">
+            <span class="the-edit-small">Take your spring style to new heights</span>
+            <h3 class="the-edit-title">RUNWAY TO RUNWAY</h3>
+          </div>
+        </div>
+        <div class="the-edit-card">
+          <div class="the-edit-img-wrap">
+            <img src="assets/option6/Branding Module/BM16.png" alt="New Season Edit">
+          </div>
+          <div class="the-edit-info">
+            <span class="the-edit-small">Discover the new collections</span>
+            <h3 class="the-edit-title">NEW SEASON EDIT</h3>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
   </main>
+
 </body>
 
 </html>

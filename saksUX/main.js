@@ -263,3 +263,33 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initial State
   slide(0);
 })();
+
+(function initJustInSlider() {
+  const track = document.getElementById('new-in-grid');
+  const nextBtn = document.getElementById('new-in-next');
+  if (!track || !nextBtn) return;
+
+  let animating = false;
+
+  nextBtn.addEventListener('click', () => {
+    if (animating) return;
+    animating = true;
+
+    const firstCard = track.querySelector('.nm-card');
+    const cardWidth = firstCard.offsetWidth;
+    const gap = 16;
+    const moveAmount = cardWidth + gap;
+
+    track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    track.style.transform = "translateX(-" + moveAmount + "px)";
+
+    function handleTransitionEnd() {
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(0)';
+      track.appendChild(firstCard);
+      animating = false;
+    }
+
+    track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+  });
+})();
