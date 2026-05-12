@@ -6,8 +6,10 @@
   <title>A.L.C. Brooklyn Floral Cotton Crop Top | Saks</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="pdp.css">
+  <link rel="stylesheet" href="gallery-v2.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script defer src="main.js"></script>
+  <script defer src="gallery-v2.js"></script>
 </head>
 <body>
 
@@ -160,44 +162,34 @@
   <main class="pdp-main">
     <div class="pdp-container">
       
-      <!-- CONSOLIDATED GALLERY COLUMN -->
+      <!-- LEFT COLUMN: ROTATING GALLERY -->
       <div class="pdp-gallery-column">
-        <!-- Main Big Image -->
+        <!-- Main Big Image Display -->
         <div class="main-display">
           <button class="nav-arrow prev" id="mainPrev"><i data-lucide="chevron-left"></i></button>
           <div class="main-image-wrap">
-            <img src="assets/pdpPage/net/Frame 1.png" id="heroImage" alt="Main View">
+            <img src="assets/pdpPage/net/Frame 1.png" id="heroImage" alt="Primary View">
           </div>
           <button class="nav-arrow next" id="mainNext"><i data-lucide="chevron-right"></i></button>
         </div>
   
-        <!-- Bottom Carousel (3 Images) -->
+        <!-- Bottom Thumbnail Carousel -->
         <div class="thumbnail-carousel-wrap">
           <button class="thumb-arrow thumb-prev" id="thumbPrev"><i data-lucide="chevron-left"></i></button>
-          <div class="thumbnail-grid" id="thumbGrid">
-            <!-- JS will populate these -->
-            <div class="thumb-box"><img src="" alt="View 2"></div>
-            <div class="thumb-box"><img src="" alt="View 3"></div>
-            <div class="thumb-box"><img src="" alt="View 4"></div>
+          <div class="thumbnail-grid">
+            <div class="thumb-box"><img src="" class="thumb-img" alt="View 2"></div>
+            <div class="thumb-box"><img src="" class="thumb-img" alt="View 3"></div>
+            <div class="thumb-box"><img src="" class="thumb-img" alt="View 4"></div>
           </div>
           <button class="thumb-arrow thumb-next" id="thumbNext"><i data-lucide="chevron-right"></i></button>
         </div>
       </div>
   
-      <!-- PRODUCT INFO (Remains Sticky) -->
+      <!-- RIGHT COLUMN: PRODUCT INFO (Sticky) -->
       <aside class="pdp-info-column">
-        <nav class="pdp-breadcrumbs">Tops <i data-lucide="chevron-right"></i> Crop Tops</nav>
-        <div class="pdp-header">
-            <h1 class="pdp-brand">A.L.C.</h1>
-            <button class="pdp-wishlist-btn"><i data-lucide="heart"></i></button>
-        </div>
-        <p class="pdp-product-name">Brooklyn Floral Cotton Crop Top</p>
-        <div class="pdp-price-block">
-            <p class="pdp-price">$325</p>
-            <p class="pdp-installments">4 interest-free payments of $81.25. <a href="#">Learn more</a></p>
-        </div>
-        <!-- ... Rest of your selection group and buttons ... -->
+        <!-- Your existing breadcrumbs, brand, price, and selection code here -->
       </aside>
+  
     </div>
   </main>
 

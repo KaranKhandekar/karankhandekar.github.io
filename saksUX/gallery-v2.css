@@ -1,0 +1,73 @@
+/* --- NEW 2-COLUMN LAYOUT --- */
+.pdp-container {
+  display: grid;
+  grid-template-columns: 1fr 400px; /* Gallery | Fixed Info Sidebar */
+  column-gap: 40px;
+  padding: 0 40px;
+  align-items: start;
+}
+
+.pdp-gallery-column {
+  position: sticky;
+  top: 163px; /* Cumulative header height */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* MAIN IMAGE AREA */
+.main-display {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 380px); /* Leaves room for thumbnails below */
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Shows full product without cropping */
+}
+
+/* THUMBNAIL AREA */
+.thumbnail-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.thumb-box {
+  aspect-ratio: 1 / 1; /* Square thumbnails like your design */
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+.thumb-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NAVIGATION ARROWS */
+.nav-arrow, .thumb-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); }
+.prev { left: 0; }
+.next { right: 0; }
