@@ -1554,6 +1554,41 @@ ul {
   display: block;
 }
 
+/* index2.html "JUST IN" cards use nm-* classes */
+.new-in-grid .nm-card {
+  flex: 0 0 calc((100% - 64px) / 5);
+  min-width: calc((100% - 64px) / 5);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.new-in-grid .nm-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 7; /* taller tile (more height) */
+  overflow: hidden;
+  background: #f9f9f9;
+}
+
+.new-in-grid .nm-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills tile cleanly */
+  object-position: center;
+  display: block;
+}
+
+.new-in-grid .nm-brand {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  text-align: center;
+}
+
 .new-in-brand {
   font-family: var(--font-sans);
   font-size: 14px;
@@ -2380,12 +2415,157 @@ ul {
 .trending-now-section {
   padding-top: 20px;
   padding-bottom: 80px;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
 .trending-grid-wrapper {
-  padding-right: 0;
+  padding-right: var(--spacing-md);
 }
 
 .trending-now-section .new-in-img-wrap {
   background: transparent;
+}
+
+/* WHERE TO WEAR horizontal scroll */
+.wtw-section {
+  margin: 72px 0;
+  padding: 18px 0 22px;
+  background: #ffffff;
+}
+
+.wtw-title {
+  margin: 0 0 14px;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.wtw-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.wtw-container::-webkit-scrollbar {
+  display: none;
+}
+
+.wtw-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  width: max-content;
+}
+
+.wtw-card {
+  flex: 0 0 calc((100vw - (3 * 2px)) / 4.2);
+  min-width: 220px;
+  background: #fff;
+}
+
+.wtw-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.wtw-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wtw-label {
+  margin: 8px 0 10px;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* THE EDIT horizontal scroll */
+.the-edit-section {
+  margin: 72px 0;
+  padding: 18px 0 22px;
+  background: #ffffff;
+}
+
+.the-edit-main-title {
+  margin: 0 0 14px;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.the-edit-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.the-edit-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.the-edit-card {
+  flex: 0 0 calc((100vw - (3 * 2px)) / 4.2);
+  min-width: 220px;
+  background: #fff;
+  scroll-snap-align: start;
+}
+
+.the-edit-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.the-edit-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.the-edit-info {
+  padding: 8px 8px 10px;
+  background: #fff;
+}
+
+.the-edit-small {
+  display: block;
+  margin-bottom: 2px;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.the-edit-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
